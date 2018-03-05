@@ -1,0 +1,12 @@
+{% load i18n %}
+{% include "header.html" %}
+
+<form method="POST"  action="">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="{% trans 'User Search' %}">
+
+</form>
+

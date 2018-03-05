@@ -1,0 +1,22 @@
+<body>
+{% load i18n %}
+
+<h1>{{ title}}</h1>
+<div>
+<form method="POST" action="/people/registered">
+    {% csrf_token %}
+
+    {{user_form.as_p}}
+
+    {{ form.as_p }}
+
+
+    <input type="submit" value="register">
+
+</form>
+</div>
+
+</body>
+
+
+

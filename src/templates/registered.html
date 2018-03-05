@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form method="post" action="/people/">
+    {% csrf_token %}
+
+    <p> Successfully Registered </p>
+
+    <input type="submit" value="Login">
+
+</form>
+</body>
+</html>

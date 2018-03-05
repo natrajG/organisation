@@ -1,0 +1,117 @@
+{% load i18n %}
+{% include "header.html" %}
+
+
+
+<head>
+    <title>month bill</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+</head>
+<body>
+
+<style>
+    table, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+    input[type='readonly'] {
+        border: none;
+        outline: none;
+    }
+    input[type=text] {
+        display:none;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        $('#edit_btn').click(function() {
+            $('#edit_form input[type=text]').show();
+            $('#edit_form input[type=readonly]').hide();
+        });
+    });
+</script>
+
+<form method="POST" id="edit_form">
+<div>
+    <span>{% trans 'App-Id' %}: {{name.id}}</span><br>
+    <span>{% trans 'Full-Name' %} : {{name}}</span>
+</div>
+<br>
+<table>
+
+    <tr>
+        <td>{% trans 'Date' %}</td>
+        <td>{{date}}</td>
+    </tr>
+    <tr>
+        <td>{% trans 'Share Amount' %} </td>
+        <td>
+            <input type="readonly" value="{{share_amount}}">
+            <input type="text" value="{{share_amount}}">
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'Loan Amount' %}</td>
+        <td>
+            <input type="readonly" value="{{loan_amount}}">
+            <input type="text" value="{{loan_amount}}">
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'Emi Amount' %}</td>
+        <td>
+            <input type="readonly" value="{{emi_amount}}">
+            <input type="text" value="{{emi_amount}}">
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'Balance Amount' %}</td>
+        <td>
+            <input type="readonly" value="{{balance_amount}}">
+            <input type="text" value="{{balance_amount}}">
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'total_emi_no' %}  ({{total_emi_no}})</td>
+        <td>
+            <!--<input type="readonly" value="{{total_emi_no}}">-->
+            <!--<input type="text" value="{{total_emi_no}}">-->
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'Emi.No' %}    ({{emi_no}})</td>
+        <td>
+            <!--<input type="readonly" value="{{emi_no}}">-->
+            <!--<input type="text" value="{{emi_no}}">-->
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'Rate Of Intrest' %}   ({{rate}})%</td>
+        <td>
+            <!--<input type="readonly" value="{{rate}}">-->
+            <!--<input type="text" value="{{rate}}">-->
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'Intrest Amount' %}</td>
+        <td>
+            <input type="readonly" value="{{intrest}}">
+            <input type="text" value="{{intrest}}">
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'Total' %}</td>
+        <td>
+            <input type="readonly" value="{{total}}">
+            <input type="text" value="{{total}}">
+        </td>
+    </tr>
+</table>
+<br>
+    {% csrf_token %}
+    <input type="submit" id="print_btn" value="{% trans 'Print' %}">
+</form>
+<input type="button" id="edit_btn" value="{% trans 'Edit Bill' %}">
+</body>
+

@@ -1,0 +1,76 @@
+{% include "header.html" %}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function() {
+        var str = "{{loan_status}}";
+            str1 = "{{special_loan_status}}";
+        $("#loan_form_btn").click(function() {
+            if (str.toString() == 'True')  {
+                $("#special_loan").hide();
+                alert('loan already exists');
+            } else {
+                $("#loan_form").show();
+                $("#special_loan").hide();
+            }
+            });
+        $("#special_loan_btn").click(function() {
+            if (str1.toString() == 'True') {
+                alert('Special Loan Already exists');
+            } else {
+                $("#special_loan").show();
+                $("#loan_form").hide();
+            }
+        });
+    });
+</script>
+
+<body>
+<style>
+    table, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+
+</style>
+
+<h3>App.No: {{application_id}}</h3>
+<h3>Full Name : {{name}}</h3>
+<h4>Balance: {{balance}}</h4>
+
+<button type="button"  value="Loan Form" id="loan_form_btn">Loan Form</button>
+<button type="button"  value="Special Loan Form" id="special_loan_btn">Special Loan Form</button>
+<form method="POST" id="loan_form" style="display:none;">
+    {% csrf_token %}
+        {{ forms.loan_form.as_p }}
+    <input type="submit" value="Submit">
+
+</form>
+<form id="special_loan" method="POST" style="display:none;">
+    {% csrf_token %}
+    {{ forms.specialLoan_form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+<script>
+jQuery('#id_number_of_emi').focus(function(){
+    var a = jQuery("#id_loan_amount").val();
+    var b = jQuery("#id_installment_amount").val();
+
+    if(a && b) {
+        jQuery(this).val(a/b);
+    }
+})
+
+jQuery('#id_special_intrest_amount').focus(function(){
+    var a = jQuery("#id_special_loan_amount").val();
+    var b = jQuery("#id_special_rate_of_intrest").val();
+
+    if(a && b) {
+        jQuery(this).val(a*(b/100));
+    }
+})
+
+</script>
+
+</body>

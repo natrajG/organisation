@@ -1,0 +1,9 @@
+{% include "header.html" %}
+<body>
+    <form method="post" action="/people/home">
+        {% csrf_token %}
+        New application created successfully
+        <br>
+        <input type="submit" value="Home">
+    </form>
+</body>

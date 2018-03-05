@@ -1,0 +1,16 @@
+{% include "header.html" %}
+<head>
+    <title>Loan Approved</title>
+</head>
+<body>
+<form method="post" action="/people/home">
+
+    {% csrf_token %}
+
+    <p> Loan took</p>
+    <input type="submit" value="Home">
+
+</form>
+
+
+</body>
