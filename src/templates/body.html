@@ -1,0 +1,173 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<section class="section blog-area">
+	<div style="width:100%">
+		<div class="row">
+			<div class="col-lg-2 col-md-12">
+				<div class="sidebar-area">
+
+					<div class="sidebar-section about-author center-text">
+						<div class="author-image"><img src="{% static 'images/author-1-200x200.jpg' %}" alt="Autohr Image"></div>
+
+						<ul class="social-icons">
+							<li><a href="#"><i class="ion-social-facebook-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-twitter-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-vimeo-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-pinterest-outline"></i></a></li>
+						</ul><!-- right-area -->
+
+						<h4 class="author-name"><b class="light-color">Cristine Smith</b></h4>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+							dolore magnam aliquam quaerat voluptatem.</p>
+
+						<div class="signature-image"><img src="{% static 'images/signature-image.png' %}" alt="Signature Image"></div>
+						<a class="read-more-link" href="#"><b>READ MORE</b></a>
+					</div><!-- sidebar-section about-author -->
+				</div><!-- about-author -->
+			</div><!-- col-lg-4 -->
+
+			<div class="col-lg-8 col-md-12">
+				<div class="blog-posts" {% if not 'login_success' in request.path %} style="display: none" {% endif %}>
+
+					<div class="row">
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-3-500x400.jpg' %}" alt="Blog Image"></div>
+
+								<h3 class="title"><b class="light-color">How to paint the </b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-4-500x400.jpg' %}" alt="Blog Image"></div>
+
+								<h3 class="title"><b class="light-color">A new festival in your town</b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-5-500x400.jpg' %}" alt="Blog Image"></div>
+
+								<h3 class="title"><b class="light-color">A new festival in your town</b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-6-500x400.jpg' %}" alt="Blog Image"></div>
+								<h3 class="title"><b class="light-color">A new festival in your town</b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-3-500x400.jpg' %}" alt="Blog Image"></div>
+
+								<h3 class="title"><b class="light-color">How to paint the </b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-4-500x400.jpg' %}" alt="Blog Image"></div>
+
+								<h3 class="title"><b class="light-color">A new festival in your town</b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-5-500x400.jpg' %}" alt="Blog Image"></div>
+
+								<h3 class="title"><b class="light-color">A new festival in your town</b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-6-500x400.jpg' %}" alt="Blog Image"></div>
+								<h3 class="title"><b class="light-color">A new festival in your town</b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-3-500x400.jpg' %}" alt="Blog Image"></div>
+
+								<h3 class="title"><b class="light-color">How to paint the </b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-4-500x400.jpg' %}" alt="Blog Image"></div>
+
+								<h3 class="title"><b class="light-color">A new festival in your town</b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-5-500x400.jpg' %}" alt="Blog Image"></div>
+
+								<h3 class="title"><b class="light-color">A new festival in your town</b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+
+						<div class="col-lg-3 col-md-4">
+							<div class="single-post">
+								<div class="image-wrapper"><img src="{% static 'images/blog-6-500x400.jpg' %}" alt="Blog Image"></div>
+								<h3 class="title"><b class="light-color">A new festival in your town</b></h3>
+								<p>Sed ut perspiciatis </p>
+							</div><!-- single-post -->
+						</div><!-- col-sm-6 -->
+					</div><!-- row -->
+				</div><!-- blog-posts -->
+			</div><!-- col-lg-4 -->
+
+
+			<div class="col-lg-2 col-md-12">
+				<div class="sidebar-area">
+
+					<div class="sidebar-section about-author center-text">
+						<div class="author-image"><img src="{% static 'images/author-1-200x200.jpg' %}" alt="Autohr Image"></div>
+
+						<ul class="social-icons">
+							<li><a href="#"><i class="ion-social-facebook-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-twitter-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-vimeo-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-pinterest-outline"></i></a></li>
+						</ul><!-- right-area -->
+
+						<h4 class="author-name"><b class="light-color">Cristine Smith</b></h4>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+							dolore magnam aliquam quaerat voluptatem.</p>
+
+						<div class="signature-image"><img src="{% static 'images/signature-image.png' %}" alt="Signature Image"></div>
+						<a class="read-more-link" href="#"><b>READ MORE</b></a>
+
+					</div><!-- sidebar-section about-author -->
+
+				</div><!-- about-author -->
+			</div><!-- col-lg-4 -->
+
+		</div><!-- row -->
+	</div><!-- container -->
+</section><!-- section -->

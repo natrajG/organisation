@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext as _
 
 
 # Create your models here.
@@ -14,7 +15,7 @@ class SignUp(models.Model):
 
 
 class Application(models.Model):
-    full_name = models.CharField(max_length=40)
+    full_name = models.CharField(max_length=40, verbose_name=_('full_name'))
     father_or_husband_name = models.CharField(max_length=20)
     nominee_name = models.CharField(max_length=20)
     date_of_birth = models.DateField()

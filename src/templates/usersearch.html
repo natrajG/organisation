@@ -1,12 +1,15 @@
 {% load i18n %}
-{% include "header.html" %}
+{% include "base.html" %}
 
-<form method="POST"  action="">
+<form method="POST"  action="" align="center" class="fixed-bottom">
     {% csrf_token %}
-
-    {{ form.as_p }}
-
-    <input type="submit" value="{% trans 'User Search' %}">
-
+        <fieldset>
+            {% for field in form %}
+                <div class="form-group">
+                    <label class="col-sm-1 control-label" for="id_{{ field.name }}">{{ field.label }}</label>{{ field }}
+                </div>
+            {% endfor %}
+        </fieldset>
+    <button type="submit" class="btn" >{% trans 'User Search' %}</button>
 </form>
 

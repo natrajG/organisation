@@ -1,7 +1,5 @@
 {% load i18n %}
-{% include "header.html" %}
-
-
+{% include "base.html" %}
 
 <head>
     <title>month bill</title>
@@ -35,7 +33,7 @@
 <form method="POST" id="edit_form">
 <div>
     <span>{% trans 'App-Id' %}: {{name.id}}</span><br>
-    <span>{% trans 'Full-Name' %} : {{name}}</span>
+    <span>{% trans 'Full-Name' %} : {% blocktrans with name=name %} {{name}} {% endblocktrans %}</span>
 </div>
 <br>
 <table>

@@ -48,6 +48,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'translation_manager',
     'people',
+    'social_django',
+    'bootstrap_datepicker'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,6 +64,7 @@ MIDDLEWARE_CLASSES = (
     # 'jannath.middleware.LoginRequiredMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 )
 
 # LOGIN_EXEMPT_URLS = ['/people/']
@@ -69,6 +72,7 @@ MIDDLEWARE_CLASSES = (
 # LOGIN_URL = '/people'
 
 ROOT_URLCONF = 'jannath.urls'
+GOOGLE_TAG_ID = 'GTM-T5B2C5'
 
 TEMPLATES = [
     {
@@ -81,10 +85,24 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1996317307361534'
+SOCIAL_AUTH_FACEBOOK_SECRET = '296981e4892f19b82ad34000a7409dbe'
+
 
 WSGI_APPLICATION = 'jannath.wsgi.application'
 

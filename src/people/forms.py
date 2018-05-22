@@ -1,9 +1,12 @@
 __author__ = 'qsslp231'
 
+from bootstrap_datepicker.widgets import DatePicker
+
 from django.utils.translation import ugettext_lazy as _
 from django import forms
 from .models import *
 from django.contrib.auth.models import User
+from django.contrib.admin.widgets import AdminDateWidget
 
 from .models import Application
 
@@ -28,25 +31,26 @@ class SignUpForm(forms.Form):
     #     print "CLeaning"
     #     raise forms.ValidationError("Testing")
 
+
 class LoginForm(forms.Form):
 
     user_name = forms.CharField(label=_("user_name"), max_length=10)
     password = forms.CharField(label=_("password"), widget=forms.PasswordInput())
 
-    def clean(self):
-        if self.errors:
-            return
-        try:
-            data = self.cleaned_data
-            username = data.get('user_name')
-            password = data.get('password')
-            us = User.objects.get(username=username)
-            if us:
-                us.password == password
-                self.user_name = username
-                return self.user_name
-        except User.DoesNotExist:
-            self.add_error('user_name', _('User Name or Password Invalid'))
+    # def clean(self):
+    #     if self.errors:
+    #         return
+    #     try:
+    #         data = self.cleaned_data
+    #         username = data.get('user_name')
+    #         password = data.get('password')
+    #         us = User.objects.get(username=username)
+    #         if us:
+    #             us.password == password
+    #             self.user_name = username
+    #             return self.user_name
+    #     except User.DoesNotExist:
+    #         self.add_error('user_name', _('User Name or Password Invalid'))
 
 
 class UserSearchForm(forms.Form):
@@ -86,7 +90,11 @@ class ApplicationForm(forms.Form):
         full_name = forms.CharField(label=_('full_name'))
         father_or_husband_name= forms.CharField(label=_('father_or_husband_name'))
         nominee_name = forms.CharField(label= _('nominee_name'))
-        date_of_birth = forms.DateField(label=_('date_of_birth'))
+        date_of_birth = forms.DateField(label=_('date_of_birth'),
+                                        widget=forms.TextInput(attrs=
+                                {
+                                    'class':'datepicker'
+                                }))
         job = forms.CharField(label=_('job'))
         address = forms.CharField(label=_('address'))
         mobile_no = forms.IntegerField(label=_('mobile_no'))

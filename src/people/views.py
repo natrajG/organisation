@@ -11,6 +11,7 @@ from django.http import *
 from django.views.generic import FormView, TemplateView
 from multi_form_view import MultiFormView
 from django.db import connection
+from django.contrib.auth import authenticate
 
 # Create your views here.
 
@@ -24,7 +25,13 @@ class LoginView(FormView):
     form_class = LoginForm
 
     def form_valid(self, form):
-        if form.user_name:
+        user_name = self.request.POST.get('user_name')
+        password = self.request.POST.get('password')
+
+        user = authenticate(username=user_name, password=password)
+
+
+        if user:
             return HttpResponseRedirect('/people/login_success')
     # def post(self, request, *args, **kwargs):
     #     username = request.POST.get('user_name')
@@ -137,7 +144,7 @@ def signUpSuccess(request):
 
         user = User(username=name, password=password)
         user.set_password(password)
-        myForm = SignUpForm(request.POST, instance=user)
+        myForm = SignUpForm(request.POST)
         if myForm.is_valid():
             user.save()
             signup = SignUp(user_id=user.id, date_of_birth=date_of_birth, mobile_no=mobile_no)

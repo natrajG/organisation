@@ -1,21 +1,104 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+{% load i18n %}
 {% load staticfiles %}
-<html lang="en">
 <head>
-    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}"
-          rel="stylesheet" media="screen">
-    <meta charset="UTF-8">
-    <title></title>
+	<title>Organisation</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+
+
+	<!-- Font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+	<!-- Stylesheets -->
+
+	<link href="{% static 'common-css/bootstrap.css' %}" rel="stylesheet">
+
+	<link href="{% static 'common-css/ionicons.css' %}" rel="stylesheet">
+
+	<link href="{% static 'common-css/layerslider.css' %}" rel="stylesheet">
+
+
+	<link href="{% static '01-homepage/css/styles.css' %}" rel="stylesheet">
+
+	<link href="{% static '01-homepage/css/responsive.css' %}" rel="stylesheet">
+
 </head>
 <body>
-<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-<form method="POST" >
-    {% csrf_token %}
 
-    {{ form.as_p }}
+	<header>
 
-    <input type="submit" value="Submit" />
+		<div class="middle-menu center-text"><a href="#" class="logo"><img src="{% static 'images/logo.png' %}" alt="Logo Image"></a></div>
 
-</form>
+		<div class="bottom-area">
+
+			<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
+
+			<ul class="main-menu visible-on-click" id="main-menu">
+				<li class="drop-down"><a href="#!">HOME<i class="ion-ios-arrow-down"></i></a>
+
+					<!--<ul class="drop-down-menu">-->
+						<!--<li><a href="#">FEATURED</a></li>-->
+						<!--<li><a href="#">ABOUT</a></li>-->
+						<!--<li class="drop-down"><a href="/people/new_application"> {% trans 'New Application' %}<i class="ion-ios-arrow-right"></i></a>-->
+							<!--<ul class="drop-down-menu drop-down-inner">-->
+								<!--<li><a href="#">FEATURED</a></li>-->
+								<!--<li><a href="#">ABOUT</a></li>-->
+								<!--<li><a href="#">CATEGORIES</a></li>-->
+							<!--</ul>-->
+						<!--</li>-->
+					<!--</ul>-->
+
+				</li>
+				<li><a href="/people/new_application"> {% trans 'New Application' %}</a></li>
+				<li><a href="/people/user_search">{% trans 'User Search' %}</a></li>
+				<li><a href="/people/bill_search">{% trans 'Bill Pay' %}</a></li>
+				<li><a href="/people/logout">{% trans 'Logout' %}</a></li>
+			</ul><!-- main-menu -->
+
+		</div><!-- conatiner -->
+	</header>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-6">
+					<div class="footer-section">
+						<p class="copyright">Juli &copy; 2018. All rights reserved. | This template is made with <i class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+					</div><!-- footer-section -->
+				</div><!-- col-lg-4 col-md-6 -->
+
+				<div class="col-sm-6">
+					<div class="footer-section">
+						<ul class="social-icons">
+							<li><a href="#"><i class="ion-social-facebook-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-twitter-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-vimeo-outline"></i></a></li>
+							<li><a href="#"><i class="ion-social-pinterest-outline"></i></a></li>
+						</ul>
+					</div><!-- footer-section -->
+				</div><!-- col-lg-4 col-md-6 -->
+
+			</div><!-- row -->
+		</div><!-- container -->
+	</footer>
+
+
+	<!-- SCIPTS -->
+
+	<script src="{% static 'common-js/jquery-3.1.1.min.js' %}"></script>
+
+	<script src="{% static 'common-js/tether.min.js' %}"></script>
+
+	<script src="{% static 'common-js/bootstrap.js' %}"></script>
+
+	<script src="{% static 'common-js/layerslider.js' %}"></script>
+
+	<script src="{% static 'common-js/scripts.js' %}"></script>
+
 </body>
-</html>

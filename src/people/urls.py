@@ -3,8 +3,8 @@
 from .views import LoginView, HomeView, ApplicationView, UserSearchView, \
     UserSearchResultView, LoanView, BillSearchView, BillPayView, SuccessView
 import views
-from django.conf.urls import url
-
+from django.conf.urls import url, include
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
 
@@ -27,5 +27,8 @@ urlpatterns = [
     # url(r'^bill_paid/(?P<appid>\d+)/(?P<date>\S*)/(?P<samount>\d+)/(?P<total>\d+)/(?P<loanid>\d+)/(?P<rm_pp>\d+)/(?P<intrest>\d+)/(?P<eamount>\d+)/(?P<emi_no>\d+)/$',
     #     views.bill_paid, name='billpaid'),
     url(r'^test',views.test,name='test'),
-    url(r'^success/(?P<app_id>\S*)', SuccessView.as_view(), name='success')
+    url(r'^success/(?P<app_id>\S*)', SuccessView.as_view(), name='success'),
+    url(r'^login/$', auth_views.login, name='login'),
+    url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),
 ]
