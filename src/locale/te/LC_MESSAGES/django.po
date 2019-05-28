@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-27 12:55+0530\n"
+"POT-Creation-Date: 2019-05-28 22:35+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,11 +28,11 @@ msgstr ""
 
 #: src/people/forms.py:23 src/people/forms.py:93
 msgid "date_of_birth"
-msgstr ""
+msgstr "పుట్టిన తేది"
 
 #: src/people/forms.py:24 src/people/forms.py:100
 msgid "mobile_no"
-msgstr ""
+msgstr "మొబైల్ నం."
 
 #: src/people/forms.py:37
 msgid "user_name"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: src/people/forms.py:57 src/people/forms.py:117
 msgid "id_or_full_name"
-msgstr ""
+msgstr "అప్లికేషన్ నం./పూర్తి పేరు"
 
 #: src/people/forms.py:80 src/people/forms.py:150
 msgid "Enter Application Number Or Full Name"
@@ -56,27 +56,27 @@ msgstr ""
 
 #: src/people/forms.py:90 src/people/models.py:18
 msgid "full_name"
-msgstr ""
+msgstr "పూర్తి పేరు"
 
 #: src/people/forms.py:91
 msgid "father_or_husband_name"
-msgstr ""
+msgstr "తండ్రి/భర్త పేరు"
 
 #: src/people/forms.py:92
 msgid "nominee_name"
-msgstr ""
+msgstr "నామిని పేరు"
 
 #: src/people/forms.py:98
 msgid "job"
-msgstr ""
+msgstr "ఉద్యోగం"
 
 #: src/people/forms.py:99
 msgid "address"
-msgstr ""
+msgstr "చిరునామా"
 
 #: src/people/forms.py:104
 msgid "loan_amount"
-msgstr ""
+msgstr "ౠణము రూ/-"
 
 #: src/people/forms.py:105
 msgid "installment_amount"
@@ -114,91 +114,107 @@ msgstr ""
 msgid "Something went Horribly Wrong"
 msgstr ""
 
-#: src/templates/application.html:29
+#: src/templates/application.html:21
 msgid "Submit"
-msgstr ""
+msgstr "సబ్మిట్"
 
-#: src/templates/base.html:42
+#: src/templates/base.html:40
+msgid "Home"
+msgstr "హొమె పేజ్"
+
+#: src/templates/base.html:41
 msgid "New Application"
-msgstr ""
+msgstr "కొత్త అప్లికేషన్"
 
-#: src/templates/base.html:43 src/templates/usersearch.html:13
+#: src/templates/base.html:42 src/templates/usersearch.html:13
 msgid "User Search"
 msgstr "సబ్యుడిని వెతుకు"
 
-#: src/templates/base.html:44
+#: src/templates/base.html:43
 msgid "Bill Pay"
-msgstr ""
+msgstr "బిల్ల్ కట్టాలి"
 
-#: src/templates/base.html:45
+#: src/templates/base.html:44
 msgid "Logout"
-msgstr ""
+msgstr "లాగ్అవుట్"
 
 #: src/templates/bill.html:17
 msgid "Bill Search"
-msgstr ""
+msgstr "బిల్ల్ వెతుకు"
 
-#: src/templates/monthbill.html:35
+#: src/templates/monthbill.html:29
 msgid "App-Id"
 msgstr ""
 
-#: src/templates/monthbill.html:36
+#: src/templates/monthbill.html:30
 msgid "Full-Name"
 msgstr ""
 
-#: src/templates/monthbill.html:36
+#: src/templates/monthbill.html:30
 #, python-format
 msgid " %(name)s "
 msgstr ""
 
-#: src/templates/monthbill.html:42
+#: src/templates/monthbill.html:36
 msgid "Date"
 msgstr ""
 
-#: src/templates/monthbill.html:46
+#: src/templates/monthbill.html:40
 msgid "Share Amount"
 msgstr ""
 
-#: src/templates/monthbill.html:53
+#: src/templates/monthbill.html:47
 msgid "Loan Amount"
 msgstr ""
 
-#: src/templates/monthbill.html:60
+#: src/templates/monthbill.html:54
 msgid "Emi Amount"
 msgstr ""
 
-#: src/templates/monthbill.html:67
+#: src/templates/monthbill.html:61
 msgid "Balance Amount"
 msgstr ""
 
-#: src/templates/monthbill.html:74
+#: src/templates/monthbill.html:68
 msgid "total_emi_no"
 msgstr ""
 
-#: src/templates/monthbill.html:81
+#: src/templates/monthbill.html:75
 msgid "Emi.No"
 msgstr ""
 
-#: src/templates/monthbill.html:88
+#: src/templates/monthbill.html:82
 msgid "Rate Of Intrest"
 msgstr ""
 
-#: src/templates/monthbill.html:95
+#: src/templates/monthbill.html:89
 msgid "Intrest Amount"
 msgstr ""
 
-#: src/templates/monthbill.html:102
+#: src/templates/monthbill.html:96
 msgid "Total"
 msgstr ""
 
-#: src/templates/monthbill.html:111
+#: src/templates/monthbill.html:105
 msgid "Print"
 msgstr ""
 
-#: src/templates/monthbill.html:113
+#: src/templates/monthbill.html:107
 msgid "Edit Bill"
 msgstr ""
 
-#: src/templates/success.html:10
+#: src/templates/success.html:5
 msgid "Your Application is saved and your id"
 msgstr ""
+
+#: src/templates/useraccount.html:8
+msgid "App.No:"
+msgstr "అప్లికేషన్ సంఖ్య:"
+
+#: src/templates/useraccount.html:9
+msgid "Full Name :"
+msgstr "పూర్తి పేరు:"
+
+#: src/templates/useraccount.html:10
+msgid "Balance:"
+msgstr "బ్యలెన్స్:"

@@ -1,12 +1,15 @@
+{% load i18n %}
 {% include "base.html" %}
 <div style="
     position: relative;
     top: 300;
     left: 550px;
 ">
-    <h4>App.No: {{application_id}}</h4>
-    <h4>Full Name : {{name}}</h4>
-    <h4>Balance: {{balance}}</h4>
+    {% get_current_language as LANGUAGE_CODE %}
+{{LANGUAGE_CODE}}
+    <h4>{% trans 'App.No:' %} {{application_id}}</h4>
+    <h4>{% trans 'Full Name :' %} {{name}}</h4>
+    <h4>{% trans 'Balance:' %} {{balance}}</h4>
 
     <button type="button"  class="btn btn-primary" value="Loan Form" id="loan_form_btn">Loan Form</button>
     <button type="button"  class="btn btn-primary" value="Special Loan Form" id="special_loan_btn">Special Loan Form</button>
