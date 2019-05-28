@@ -1,12 +1,6 @@
 {% load i18n %}
 {% include "base.html" %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Status</title>
-</head>
-<body>
-<p>{% trans 'Your Application is saved and your id' %}</p>
-</body>
-</html>
+<div style="position:relative;top:300px;left:550px;">
+    <p>{% trans 'Your Application is saved and your id' %} {{id}}</p>
+</div>

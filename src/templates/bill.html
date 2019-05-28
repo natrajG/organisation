@@ -1,10 +1,10 @@
 {% load i18n %}
 {% include "base.html" %}
-<body>
+<div style="position:relative;top:300px;left:550px;">
     {% if error %}
     <p style="color:red">{{ error }}</p>
     {% endif %}
-    <form method="POST" action="{% url 'bill_search' %}" align="center" class="fixed-bottom">
+    <form method="POST" action="{% url 'bill_search' %}">
         {% csrf_token %}
         <fieldset>
             {% for field in form %}
@@ -16,4 +16,4 @@
         </fieldset>
         <button type="submit" class="btn" value="Bill Search" >{% trans 'Bill Search' %}</button>
     </form>
-</body>
+</div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-16 11:54+0530\n"
+"POT-Creation-Date: 2019-05-27 12:55+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,195 +18,187 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: jannath/settings.py:128
+#: src/jannath/settings.py:128
 msgid "English"
 msgstr ""
 
-#: jannath/settings.py:129
+#: src/jannath/settings.py:129
 msgid "Telugu"
 msgstr ""
 
-#: people/forms.py:20 people/forms.py:90
+#: src/people/forms.py:23 src/people/forms.py:93
 msgid "date_of_birth"
-msgstr "పుట్టిన తేది"
+msgstr ""
 
-#: people/forms.py:21 people/forms.py:93
+#: src/people/forms.py:24 src/people/forms.py:100
 msgid "mobile_no"
-msgstr "మొబైల్ నంబర్"
+msgstr ""
 
-#: people/forms.py:34
+#: src/people/forms.py:37
 msgid "user_name"
 msgstr "వ్యక్తి పేరు"
 
-#: people/forms.py:35
+#: src/people/forms.py:38
 msgid "password"
-msgstr "పాస్వర్డ్"
+msgstr ""
 
-#: people/forms.py:54 people/forms.py:110
+#: src/people/forms.py:57 src/people/forms.py:117
 msgid "id_or_full_name"
-msgstr "నంబర్ లేద పూర్తి పేరు"
+msgstr ""
 
-#: people/forms.py:77 people/forms.py:143
+#: src/people/forms.py:80 src/people/forms.py:150
 msgid "Enter Application Number Or Full Name"
-msgstr "సబ్యుని నంబర్ లేద పూర్తి పేరు ఇవండి"
+msgstr ""
 
-#: people/forms.py:82
+#: src/people/forms.py:85
 msgid "No Application Records Found"
-msgstr "ఈ నంబర్ లేద పుర్తి పెరు తొ ఎ రికాడ్ లేదు"
+msgstr ""
 
-#: people/forms.py:88
+#: src/people/forms.py:90 src/people/models.py:18
+msgid "full_name"
+msgstr ""
+
+#: src/people/forms.py:91
 msgid "father_or_husband_name"
-msgstr "తండ్రి/భర్త పేరు"
+msgstr ""
 
-#: people/forms.py:89
+#: src/people/forms.py:92
 msgid "nominee_name"
-msgstr "నామిని పేరు"
+msgstr ""
 
-#: people/forms.py:91
+#: src/people/forms.py:98
 msgid "job"
-msgstr "వృత్తి"
+msgstr ""
 
-#: people/forms.py:92
+#: src/people/forms.py:99
 msgid "address"
-msgstr "చిరునామ"
+msgstr ""
 
-#: people/forms.py:97
+#: src/people/forms.py:104
 msgid "loan_amount"
-msgstr "ఋణము తీసుకున్న రూ|| లు"
+msgstr ""
 
-#: people/forms.py:98
+#: src/people/forms.py:105
 msgid "installment_amount"
-msgstr "కిస్తీ"
+msgstr ""
 
-#: people/forms.py:99
+#: src/people/forms.py:106
 msgid "number_of_emi"
-msgstr "నిర్ణ ఇంచిన కిస్తీ"
+msgstr ""
 
-#: people/forms.py:100
+#: src/people/forms.py:107
 msgid "rate_of_intrest"
-msgstr "వడ్డి రేటు"
+msgstr ""
 
-#: people/forms.py:104
+#: src/people/forms.py:111
 msgid "special_loan_amount"
-msgstr "స్పెషల్ అప్పు"
+msgstr ""
 
-#: people/forms.py:105
+#: src/people/forms.py:112
 msgid "special_rate_of_intrest"
-msgstr "స్పెషల్ వడ్డి రేటు"
+msgstr ""
 
-#: people/forms.py:106
+#: src/people/forms.py:113
 msgid "special_intrest_amount"
-msgstr "స్పెషల్ అప్పు పై మిత్తి"
+msgstr ""
 
-#: people/forms.py:130
+#: src/people/forms.py:137
 msgid "No Application with this Number"
-msgstr "ఈ నంబర్ తొ ఎ రికాడ్ లేదు"
+msgstr ""
 
-#: people/forms.py:139
+#: src/people/forms.py:146
 msgid "No Application with this Name"
-msgstr "ఈ పేరు తొ ఎ రికాడ్ లేదు"
+msgstr ""
 
-#: people/forms.py:146
+#: src/people/forms.py:153
 msgid "Something went Horribly Wrong"
 msgstr ""
 
-#: people/models.py:18
-msgid "full_name"
-msgstr "పూర్తి పేరు"
-
-#: templates/application.html:12
+#: src/templates/application.html:29
 msgid "Submit"
-msgstr "సబ్మిట్"
+msgstr ""
 
-#: templates/bill.html:10
-msgid "Bill Search"
-msgstr "బిల్ వెతుకు"
-
-#: templates/header.html:45
+#: src/templates/base.html:42
 msgid "New Application"
-msgstr "కొత్త అప్లికేషన్"
+msgstr ""
 
-#: templates/header.html:48 templates/usersearch.html:9
+#: src/templates/base.html:43 src/templates/usersearch.html:13
 msgid "User Search"
 msgstr "సబ్యుడిని వెతుకు"
 
-#: templates/header.html:51
+#: src/templates/base.html:44
 msgid "Bill Pay"
-msgstr "బిల్ కట్టు"
+msgstr ""
 
-#: templates/header.html:55
+#: src/templates/base.html:45
 msgid "Logout"
-msgstr "లాగ్ అవుట్"
+msgstr ""
 
-#: templates/monthbill.html:37
+#: src/templates/bill.html:17
+msgid "Bill Search"
+msgstr ""
+
+#: src/templates/monthbill.html:35
 msgid "App-Id"
-msgstr "సబ్యుడిని.నెం"
+msgstr ""
 
-#: templates/monthbill.html:38
+#: src/templates/monthbill.html:36
 msgid "Full-Name"
-msgstr "పూర్తి పేరు"
+msgstr ""
 
-#: templates/monthbill.html:38
+#: src/templates/monthbill.html:36
 #, python-format
 msgid " %(name)s "
 msgstr ""
 
-#: templates/monthbill.html:44
+#: src/templates/monthbill.html:42
 msgid "Date"
-msgstr "తేది"
+msgstr ""
 
-#: templates/monthbill.html:48
+#: src/templates/monthbill.html:46
 msgid "Share Amount"
-msgstr "షేర్సు"
+msgstr ""
 
-#: templates/monthbill.html:55
+#: src/templates/monthbill.html:53
 msgid "Loan Amount"
-msgstr "ఋణము తీసుకున్న రూ|| లు"
+msgstr ""
 
-#: templates/monthbill.html:62
+#: src/templates/monthbill.html:60
 msgid "Emi Amount"
-msgstr "కిస్తీ"
+msgstr ""
 
-#: templates/monthbill.html:69
+#: src/templates/monthbill.html:67
 msgid "Balance Amount"
-msgstr "చెల్లించవలసిన ఋణము రూ|| లు"
+msgstr ""
 
-#: templates/monthbill.html:76
+#: src/templates/monthbill.html:74
 msgid "total_emi_no"
-msgstr "నిర్ణఇంచిన కిస్తీలు"
+msgstr ""
 
-#: templates/monthbill.html:83
+#: src/templates/monthbill.html:81
 msgid "Emi.No"
-msgstr "చెల్లించిన కిస్తీలు"
+msgstr ""
 
-#: templates/monthbill.html:90
+#: src/templates/monthbill.html:88
 msgid "Rate Of Intrest"
-msgstr "వడ్డి రేటు"
+msgstr ""
 
-#: templates/monthbill.html:97
+#: src/templates/monthbill.html:95
 msgid "Intrest Amount"
-msgstr "అప్పు పై మిత్తి"
+msgstr ""
 
-#: templates/monthbill.html:104
+#: src/templates/monthbill.html:102
 msgid "Total"
-msgstr "మొత్తము రూ|| లు"
+msgstr ""
 
-#: templates/monthbill.html:113
+#: src/templates/monthbill.html:111
 msgid "Print"
-msgstr "ప్రింట్"
+msgstr ""
 
-#: templates/monthbill.html:115
+#: src/templates/monthbill.html:113
 msgid "Edit Bill"
-msgstr "బిల్ మార్పు"
+msgstr ""
 
-#: templates/success.html:8
+#: src/templates/success.html:10
 msgid "Your Application is saved and your id"
-msgstr "మీ అప్లికేషన్ ని స్వికరించాము దన్యవాదము"
-
-#: templates/tempHtml.html:47
-msgid "Sign Out"
-msgstr "లాగ్అవుట్"
-
-
-#~ msgid "User Name or Password Invalid"
-#~ msgstr "వ్యక్తి పేరు లేద పాస్వర్డ్ సరిచుసుకొండి"
+msgstr ""

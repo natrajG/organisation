@@ -1,12 +1,6 @@
 {% load i18n %}
 {% include "base.html" %}
 
-<head>
-    <title>month bill</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-</head>
-<body>
-
 <style>
     table, td {
         border: 2px solid black;
@@ -29,7 +23,7 @@
         });
     });
 </script>
-
+<div style="position:relative;top:300px;left:550px;">
 <form method="POST" id="edit_form">
 <div>
     <span>{% trans 'App-Id' %}: {{name.id}}</span><br>
@@ -108,8 +102,8 @@
 </table>
 <br>
     {% csrf_token %}
-    <input type="submit" id="print_btn" value="{% trans 'Print' %}">
+    <input type="submit" class="btn btn-primary" id="print_btn" value="{% trans 'Print' %}">
 </form>
-<input type="button" id="edit_btn" value="{% trans 'Edit Bill' %}">
-</body>
+<input type="button" class="btn btn-primary" id="edit_btn" value="{% trans 'Edit Bill' %}">
 
+</div>
