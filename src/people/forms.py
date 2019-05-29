@@ -78,6 +78,7 @@ class UserSearchForm(forms.Form):
             else:
                 self.add_error(
                     'id_or_full_name', _('Enter Application Number Or Full Name'))
+                return
             if app1 and user_account:
                 return self.id_or_full_name
 
@@ -85,16 +86,16 @@ class UserSearchForm(forms.Form):
             self.add_error('id_or_full_name', _('No Application Records Found'))
 
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
 class ApplicationForm(forms.Form):
 
         full_name = forms.CharField(label=_('full_name'))
         father_or_husband_name= forms.CharField(label=_('father_or_husband_name'))
         nominee_name = forms.CharField(label= _('nominee_name'))
-        date_of_birth = forms.DateField(label=_('date_of_birth'),
-                                        widget=forms.TextInput(attrs=
-                                {
-                                    'class':'datepicker'
-                                }))
+        date_of_birth = forms.DateField(label=_('date_of_birth'), widget=DateInput)
         job = forms.CharField(label=_('job'))
         address = forms.CharField(label=_('address'))
         mobile_no = forms.IntegerField(label=_('mobile_no'))
