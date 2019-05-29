@@ -40,7 +40,7 @@ msgstr "వ్యక్తి పేరు"
 
 #: src/people/forms.py:38
 msgid "password"
-msgstr ""
+msgstr "పాస్వర్డ్"
 
 #: src/people/forms.py:57 src/people/forms.py:117
 msgid "id_or_full_name"
@@ -48,11 +48,11 @@ msgstr "అప్లికేషన్ నం./పూర్తి పేరు"
 
 #: src/people/forms.py:80 src/people/forms.py:150
 msgid "Enter Application Number Or Full Name"
-msgstr ""
+msgstr "అప్లికేషన్ నం./పూర్తి పేరు"
 
 #: src/people/forms.py:85
 msgid "No Application Records Found"
-msgstr ""
+msgstr "ఇ అప్లికేషన్ నం./పూర్తి పేరు తొ ఎ అప్లికేషన్ లెదు"
 
 #: src/people/forms.py:90 src/people/models.py:18
 msgid "full_name"
@@ -80,35 +80,35 @@ msgstr "ౠణము రూ/-"
 
 #: src/people/forms.py:105
 msgid "installment_amount"
-msgstr ""
+msgstr "కిస్తీ రుపాయలు"
 
 #: src/people/forms.py:106
 msgid "number_of_emi"
-msgstr ""
+msgstr "కిస్తీ నం."
 
 #: src/people/forms.py:107
 msgid "rate_of_intrest"
-msgstr ""
+msgstr "వడ్డి రెటు"
 
 #: src/people/forms.py:111
 msgid "special_loan_amount"
-msgstr ""
+msgstr "స్పెషల్ ౠణము"
 
 #: src/people/forms.py:112
 msgid "special_rate_of_intrest"
-msgstr ""
+msgstr "స్పెషల్ వడ్డి రెటు"
 
 #: src/people/forms.py:113
 msgid "special_intrest_amount"
-msgstr ""
+msgstr "స్పెషల్ వడ్డి రుపాయలు"
 
 #: src/people/forms.py:137
 msgid "No Application with this Number"
-msgstr ""
+msgstr "ఇ అప్లికేషన్ నం. తొ ఎ అప్లికేషన్ లెదు"
 
 #: src/people/forms.py:146
 msgid "No Application with this Name"
-msgstr ""
+msgstr "ఇ పేరు తొ ఎ అప్లికేషన్ లెదు"
 
 #: src/people/forms.py:153
 msgid "Something went Horribly Wrong"
@@ -144,11 +144,11 @@ msgstr "బిల్ల్ వెతుకు"
 
 #: src/templates/monthbill.html:29
 msgid "App-Id"
-msgstr ""
+msgstr "అప్లికేషన్ నం.:"
 
 #: src/templates/monthbill.html:30
 msgid "Full-Name"
-msgstr ""
+msgstr "పూర్తి పేరు"
 
 #: src/templates/monthbill.html:30
 #, python-format
@@ -157,51 +157,51 @@ msgstr ""
 
 #: src/templates/monthbill.html:36
 msgid "Date"
-msgstr ""
+msgstr "తేది"
 
 #: src/templates/monthbill.html:40
 msgid "Share Amount"
-msgstr ""
+msgstr "షేర్సు రుపాయలు"
 
 #: src/templates/monthbill.html:47
 msgid "Loan Amount"
-msgstr ""
+msgstr "తీసుకున్న ౠణము"
 
 #: src/templates/monthbill.html:54
 msgid "Emi Amount"
-msgstr ""
+msgstr "కిస్తీ రుపాయలు"
 
 #: src/templates/monthbill.html:61
 msgid "Balance Amount"
-msgstr ""
+msgstr "చెల్లించవలసిన ౠణము"
 
 #: src/templates/monthbill.html:68
 msgid "total_emi_no"
-msgstr ""
+msgstr "నిర్ణయించిన కిస్తీలు"
 
 #: src/templates/monthbill.html:75
 msgid "Emi.No"
-msgstr ""
+msgstr "చెల్లించిన కిస్తీలు"
 
 #: src/templates/monthbill.html:82
 msgid "Rate Of Intrest"
-msgstr ""
+msgstr "వడ్డి రెటు"
 
 #: src/templates/monthbill.html:89
 msgid "Intrest Amount"
-msgstr ""
+msgstr "నెల వడ్డి"
 
 #: src/templates/monthbill.html:96
 msgid "Total"
-msgstr ""
+msgstr "మొత్తం రూ/-"
 
 #: src/templates/monthbill.html:105
 msgid "Print"
-msgstr ""
+msgstr "ప్రింట్"
 
 #: src/templates/monthbill.html:107
 msgid "Edit Bill"
-msgstr ""
+msgstr "బిల్ల్ మార్పు"
 
 #: src/templates/success.html:5
 msgid "Your Application is saved and your id"
