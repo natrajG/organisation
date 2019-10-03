@@ -1,17 +1,22 @@
+import csv
 from django.shortcuts import render, HttpResponseRedirect
-from .forms import ApplicationForm, LoanForm, SpecialLoanForm, BillSearchForm, LoginForm, SignUpForm, UserSearchForm, UserForm
-from .models import Application, Bills, SignUp, SavingAccount, OrganisationAccount, Loan, SpecialLoan
+from .forms import (ApplicationForm, LoanForm, SpecialLoanForm, BillSearchForm,
+                    LoginForm, SignUpForm, UserSearchForm, UserForm, AccountStatementForm,
+                    ExpenditureForm, TotalProfitForm)
+from .models import Application, Bills, SignUp, SavingAccount, OrganisationAccount,\
+    Loan, SpecialLoan, ExpenditureModel
 from datetime import datetime
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import cache_control
+from django.contrib.auth import login, logout
 from django.contrib import auth
 from django.contrib.auth import logout
 from django.http import *
 from django.views.generic import FormView, TemplateView
 from multi_form_view import MultiFormView
 from django.db import connection
-from django.contrib.auth import authenticate
 
 # Create your views here.
 
@@ -25,21 +30,9 @@ class LoginView(FormView):
     form_class = LoginForm
 
     def form_valid(self, form):
-        user_name = self.request.POST.get('user_name')
-        password = self.request.POST.get('password')
+        login(self.request, form.user_name)
 
-        user = authenticate(username=user_name, password=password)
-
-
-        if user:
-            return HttpResponseRedirect('/people/login_success')
-    # def post(self, request, *args, **kwargs):
-    #     username = request.POST.get('user_name')
-    #     password = request.POST.get('password')
-    #
-    #     user = User.objects.get(username=username)
-    #     if user:
-    #         return HttpResponseRedirect('/people/login_success')
+        return HttpResponseRedirect('/people/login_success')
 
 
 class HomeView(LoginView):
@@ -67,7 +60,8 @@ class UserSearchResultView(TemplateView,
     template_name = 'useraccount.html'
     form_classes = {
         'loan_form': LoanForm,
-        'specialLoan_form': SpecialLoanForm
+        'specialLoan_form': SpecialLoanForm,
+        'account_statement_form': AccountStatementForm
     }
 
     def get_context_data(self, **kwargs):
@@ -92,9 +86,21 @@ class UserSearchResultView(TemplateView,
         return context
 
     def post(self, request, *args, **kwargs):
+        response = HttpResponse(content_type='text/csv')
+        writer = csv.writer(response)
+        response['Content-Disposition'] = (
+            'attachment; filename='"%s_statement_List.xls"
+            % self.kwargs['appid'])
         try:
             loan_amount = request.POST.get('loan_amount')
+            special_loan_amount = request.POST.get('special_loan_amount')
+            statement_type = request.POST.get('type')
+            from_date = request.POST.get('from_date')
+            to_date = request.POST.get('to_date')
+            org_account = OrganisationAccount.objects.latest('id')
             if loan_amount:
+                if org_account.balance < float(loan_amount):
+                    raise
                 installment_amount = request.POST.get('installment_amount')
                 number_of_emi = request.POST.get('number_of_emi')
                 rate_of_intrest = request.POST.get('rate_of_intrest')
@@ -103,8 +109,11 @@ class UserSearchResultView(TemplateView,
                                            rate_of_intrest=rate_of_intrest, status=True,
                                            created_at=datetime.now().date())
                 loan.save()
-            else:
-                special_loan_amount = request.POST.get('special_loan_amount')
+                org_account.balance = org_account.balance - float(loan_amount)
+                org_account.save()
+            elif special_loan_amount:
+                if org_account.balance < float(special_loan_amount):
+                    raise
                 special_intrest_amount = request.POST.get('special_intrest_amount')
                 special_intrest_rate = request.POST.get('special_rate_of_intrest')
                 special_loan = SpecialLoan.objects.create(appid_id=self.kwargs['appid'],
@@ -114,6 +123,46 @@ class UserSearchResultView(TemplateView,
                                                           status=True,
                                                           created_at=datetime.now().date())
                 special_loan.save()
+                org_account.balance = org_account.balance - float(special_loan_amount)
+                org_account.save()
+            elif from_date and to_date:
+                if statement_type == 'loan':
+                    loan_details = Loan.objects.filter(appid_id=self.kwargs['appid'],
+                                                       created_at__lte=to_date,
+                                                       created_at__gte=from_date)
+                    writer.writerow([_('Date'), _('Loan Amount'), _('emi amount'),
+                                     _('total_emi_no'), _('Rate Of Intrest'), _('status')])
+                    for loan in loan_details:
+                        var = (loan.created_at, loan.loan_amount, loan.emi_amount,
+                               loan.no_of_emis, loan.rate_of_intrest, loan.status)
+                        writer.writerow(var)
+                elif statement_type == 'special_loan':
+                    special_loan_details = SpecialLoan.objects.filter(appid_id=self.kwargs['appid'],
+                                                              created_at__lte=to_date,
+                                                              created_at__gte=from_date)
+                    writer.writerow([_('Date'),_('specialloan'), _('special Rate Of Intrest'),
+                                     _('special_money'), _('status')])
+
+                    for special_loan in special_loan_details:
+                        var = (special_loan.created_at, special_loan.special_loan_amount,
+                               special_loan.special_intrest_rate, special_loan.special_intrest_amount,
+                               special_loan.status)
+                        writer.writerow(var)
+                else:
+                    try:
+                        loan_details = Loan.objects.filter(appid_id=self.kwargs['appid'])
+                        for loan in loan_details:
+                            bills = Bills.objects.filter(loanid=loan.id,
+                                                         created_at__lte=to_date,
+                                                         created_at__gte=request.POST.get('from_date'))
+                            for bill in bills:
+                                var = (bill.id, bill.created_at, bill.share_amount, loan.loan_amount, bill.paid_emi, bill.interest_amount,
+                                       bill.special_loan_amount, bill.special_intrest, bill.penality,
+                                       bill.rm_amount, bill.full_paid, bill.total)
+                                writer.writerow(var)
+                    except Exception as e:
+                        print e
+                return response
             return HttpResponseRedirect('/people/login_success')
         except Exception as e:
             print e
@@ -168,6 +217,9 @@ class ApplicationView(FormView):
             job = request.POST.get('job', '')
             address = request.POST.get('address', '')
             mobile_no = request.POST.get('mobile_no', '')
+            from django.urls import reverse
+            if len(mobile_no) != 10:
+                raise ValueError('please enter 10 digit mobile number')
 
             app = Application(full_name=full_name, father_or_husband_name=father_or_husband_name,
                               nominee_name=nominee_name,
@@ -179,7 +231,7 @@ class ApplicationView(FormView):
             saving_account.save()
             return HttpResponseRedirect('/people/success/{app_id}'.format(app_id=app.id))
         except Exception, e:
-            print e
+            return HttpResponseRedirect(reverse('please enter 10 digit mobile number'))
 
 
 class LoanView(FormView):
@@ -206,44 +258,46 @@ class BillPayView(TemplateView):
         context = super(BillPayView, self).get_context_data(**kwargs)
         try:
             if context['app_id'].isdigit():
-                loan = Loan.objects.get(appid_id=context['app_id'])
+                loan = Loan.objects.filter(appid_id=context['app_id']).latest('id')
             else:
                 app1 = Application.objects.get(full_name=context['app_id'])
-                loan = Loan.objects.get(appid_id=app1.id)
+                loan = Loan.objects.filter(appid_id=app1.id).latest('id')
         except Loan.DoesNotExist:
             if context['app_id'].isdigit():
                 context['name'] = Application.objects.get(id=context['app_id'])
             else:
                 context['name'] = Application.objects.get(full_name=context['app_id'])
-            context['share_amount'] = 100
+            context['share_amount'] = 200
             context['date'] = datetime.now().date()
-            context['total'] = context['share_amount']
+            # context['total'] = context['share_amount']
             context['loan_id'] = None
             return context
         if loan and loan.status:
             try:
                 bill = Bills.objects.filter(loanid=loan.id).latest('id')
                 if bill:
-                    I = bill.rm_amount/(1*100) # 1% interest
+                    I = (bill.rm_amount - bill.full_paid)/(1*100) # 1% interest
                     emi_no = (loan.no_of_emis-(bill.rm_amount/loan.emi_amount))+1
-                    rm_pp_amount = bill.rm_amount-loan.emi_amount
+                    rm_pp_amount = (bill.rm_amount-loan.emi_amount) - bill.full_paid
                     context['intrest'] = I
                     context['total_emi_no'] = loan.no_of_emis
                     context['emi_no'] = emi_no
-                    context['balance_amount'] = rm_pp_amount
-                    context['total'] = I + 100 + loan.emi_amount
+                    context['paid_loan_amount'] = (loan.loan_amount - bill.rm_amount) + bill.full_paid
+                    context['remaining_debt'] = rm_pp_amount
+                    # context['total'] = I + 200 + loan.emi_amount
             except Bills.DoesNotExist:
                 I = loan.loan_amount/(1*100)
                 context['intrest'] = I
                 context['total_emi_no'] = loan.no_of_emis
                 context['emi_no'] = 1
-                context['balance_amount'] = loan.loan_amount
-                context['total'] = I + 100 + loan.emi_amount
+                context['remaining_debt'] = loan.loan_amount - loan.emi_amount
+                context['paid_loan_amount'] = 0
+                # context['total'] = I + 200 + loan.emi_amount
 
             context['emi_amount'] = loan.emi_amount
             context['loan_amount'] = loan.loan_amount
             context['rate'] = 1
-            context['share_amount'] = 100
+            context['share_amount'] = 200
             context['name'] = Application.objects.get(id=loan.appid_id)
             context['date'] = datetime.now().date()
             context['loan_id'] = loan.id
@@ -252,36 +306,56 @@ class BillPayView(TemplateView):
                 context['name'] = Application.objects.get(id=context['app_id'])
             else:
                 context['name'] = Application.objects.get(full_name=context['app_id'])
-            context['share_amount'] = 100
+            context['share_amount'] = 200
             context['date'] = datetime.now().date()
-            context['total'] = context['share_amount']
+            # context['total'] = context['share_amount']
             context['loan_id'] = None
         return context
 
     def post(self, request, *args, **kwargs):
         result = self.get_context_data(**kwargs)
+        special_loan_amount = request.POST.get('special_loan_amount')
+        special_intrest = request.POST.get('special_intrest')
+        penality = request.POST.get('penality')
+        full_paid = request.POST.get('full_paid')
+        total_amount = request.POST.get('total_amount')
         if result['loan_id'] is not None:
-            if result['balance_amount'] == 0:
+            if result['remaining_debt'] == 0:
                 loan = Loan.objects.get(id=result['loan_id'])
                 loan.status = False
                 loan.save()
-            bill = Bills.objects.create(paid_emi=result['emi_amount'], total=result['total'],
+            bill = Bills.objects.create(paid_emi=result['emi_amount'], total=total_amount,
                                         created_at=result['date'], emi_no=result['emi_no'],
-                                        rm_amount=result['balance_amount'],
+                                        rm_amount=result['remaining_debt'],
                                         interest_amount=result['intrest'],
-                                        loanid=result['loan_id'])
-            bill.save()
+                                        loanid=result['loan_id'],
+                                        special_loan_amount= special_loan_amount if special_loan_amount else 0,
+                                        special_intrest=special_intrest if special_intrest else 0,
+                                        penality=penality if penality else 0,
+                                        full_paid=full_paid if full_paid else 0,
+                                        share_amount=result['share_amount'])
         else:
-            bill = Bills.objects.create(created_at=result['date'], total=result['total'])
-            bill.save()
+            bill = Bills.objects.create(share_amount=result['share_amount'],created_at=result['date'], total=total_amount)
         if result['app_id'].isdigit():
             saving_account = SavingAccount.objects.get(appid_id=result['app_id'])
         else:
             app1 = Application.objects.get(full_name=result['app_id'])
             saving_account = SavingAccount.objects.get(appid_id=app1.id)
-        saving_account.balance += result['share_amount']
+        saving_account.balance += float(result['share_amount'])
         saving_account.date = result['date']
         saving_account.save()
+        try:
+            org_acc = OrganisationAccount.objects.latest('id')
+            orgacc = OrganisationAccount.objects.create(billid=bill,
+                                                        bill_amount=total_amount,
+                                                        balance=org_acc.balance + float(total_amount))
+            orgacc.save()
+        except OrganisationAccount.DoesNotExist:
+            orgacc = OrganisationAccount.objects.create(billid=bill,
+                                                        bill_amount=total_amount,
+                                                        balance=float(total_amount))
+            orgacc.save()
+        bill.save()
         return HttpResponseRedirect('/people/login_success')
 
 
@@ -292,3 +366,91 @@ class SuccessView(TemplateView):
         context = super(SuccessView, self).get_context_data(**kwargs)
         context['id'] = kwargs['app_id']
         return context
+
+
+class GenerateStatementView(TemplateView,
+                            MultiFormView):
+    template_name = 'statement.html'
+    form_classes = {
+        'expenditure_form': ExpenditureForm,
+        'account_statement_form': AccountStatementForm,
+        'total_profit_form': TotalProfitForm
+    }
+
+    def get_context_data(self, **kwargs):
+        context = super(GenerateStatementView, self).get_context_data(**kwargs)
+        try:
+            org_acc = OrganisationAccount.objects.latest('id')
+            context['balance'] = org_acc.balance
+        except OrganisationAccount.DoesNotExist:
+            raise ValueError('No record in Organisation Account')
+        return context
+
+    def post(self, request, *args, **kwargs):
+        response = HttpResponse(content_type='text/csv')
+        writer = csv.writer(response)
+
+        response['Content-Disposition'] = (
+            'attachment; filename='"%s_%s_statement_List.xls"
+            % (request.POST.get('from_date'), request.POST.get('to_date')))
+        statement_type = request.POST.get('type')
+        from_date = request.POST.get('from_date')
+        to_date = request.POST.get('to_date')
+        if from_date and to_date:
+            if statement_type == 'loan':
+                loan_details = Loan.objects.filter(created_at__lte=to_date,
+                                                   created_at__gte=from_date)
+                writer.writerow([_('Date'), _('App.No:'), _('Loan Amount'), _('emi amount'),
+                                 _('total_emi_no'), _('Rate Of Intrest'), _('status')])
+                for loan in loan_details:
+                    var = (loan.created_at, loan.appid, loan.loan_amount, loan.emi_amount,
+                           loan.no_of_emis, loan.rate_of_intrest, loan.status)
+                    writer.writerow(var)
+
+            elif statement_type == 'short appu':
+                special_loan_details = SpecialLoan.objects.filter(created_at__lte=to_date,
+                                                                  created_at__gte=from_date)
+                writer.writerow([_('Date'), _('App.No:'), _('specialloan'), _('special Rate Of Intrest'),
+                                 _('special_money'), _('status')])
+
+                for special_loan in special_loan_details:
+                    var = (special_loan.created_at, special_loan.appid, special_loan.special_loan_amount,
+                           special_loan.special_intrest_rate, special_loan.special_intrest_amount,
+                           special_loan.status)
+                    writer.writerow(var)
+            elif statement_type == 'karchulu':
+                writer.writerow([_('name'), _('amount'),
+                                 _('Date')])
+                exp_amount = ExpenditureModel.objects.filter(created_at__lte=request.POST.get('to_date'),
+                                                             created_at__gte=request.POST.get('from_date'))
+                for exp in exp_amount:
+                    var = (exp.created_at, exp.name, exp.amount)
+                    writer.writerow(var)
+            elif statement_type == 'labam_vivaralu':
+                writer.writerow([_('intrest_mon'), _('special_money'),
+                                 _('fine')])
+                bills = Bills.objects.filter(created_at__lte=request.POST.get('to_date'),
+                                             created_at__gte=request.POST.get('from_date'))
+                for bill in bills:
+                    var = (bill.interest_amount,bill.special_intrest, bill.penality)
+                    writer.writerow(var)
+            else:
+                writer.writerow([_('bill no'), _('bill date'), _('sharemoney'), _('emi amount'),
+                                 _('intrest_mon'), _('specialloan'), _('special_money'),
+                                 _('fine'), _('remaining debt'), _('full pay'), _('Total')])
+                bills = Bills.objects.filter(created_at__lte=request.POST.get('to_date'),
+                                            created_at__gte=request.POST.get('from_date'))
+                for bill in bills:
+                    var = (bill.id, bill.created_at, bill.share_amount, bill.paid_emi, bill.interest_amount,
+                           bill.special_loan_amount, bill.special_intrest, bill.penality,
+                           bill.rm_amount, bill.full_paid, bill.total)
+                    writer.writerow(var)
+        elif request.POST.get('date'):
+            exp_amount = ExpenditureModel.objects.create(name=request.POST.get('purpose'),
+                                                         amount=request.POST.get('amount'),
+                                                         created_at=request.POST.get('date'))
+            exp_amount.save()
+            return HttpResponseRedirect('/people/login_success')
+
+        return response
+

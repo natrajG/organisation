@@ -1,16 +1,17 @@
 {% load i18n %}
 {% include "base.html" %}
 <div style="position:relative;top:300px;left:550px;">
-<form method="POST"  action="" >
-    {% csrf_token %}
-        <fieldset>
-            {% for field in form %}
-                <div class="form-group">
-                    <label class="col-sm-1 control-label" for="id_{{ field.name }}">{{ field.label }}</label>{{ field }}
-                </div>
-            {% endfor %}
-        </fieldset>
-    <button type="submit" class="btn" >{% trans 'User Search' %}</button>
-</form>
+    <form method="POST"  action="" >
+        {% csrf_token %}
+            <fieldset>
+                {% for field in form %}
+                    {{ field.errors }}
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label" for="id_{{ field.name }}">{{ field.label }}</label>{{ field }}
+                    </div>
+                {% endfor %}
+            </fieldset>
+        <button type="submit" class="btn" >{% trans 'User Search' %}</button>
+    </form>
 </div>
 

@@ -54,6 +54,11 @@ class Bills(models.Model):
     emi_no = models.IntegerField(default=0)
     rm_amount = models.IntegerField(default=0)
     interest_amount = models.FloatField(default=0.0)
+    special_loan_amount = models.IntegerField(default=0)
+    special_intrest = models.FloatField(default=0)
+    penality = models.IntegerField(default=0)
+    full_paid = models.FloatField(default=0.0)
+    share_amount = models.IntegerField(default=0)
 
 
 class SavingAccount(models.Model):
@@ -66,3 +71,9 @@ class OrganisationAccount(models.Model):
     billid = models.ForeignKey(Bills, related_name='bill')
     bill_amount = models.FloatField(default=0.0)
     balance = models.FloatField(default=0.0)
+
+
+class ExpenditureModel(models.Model):
+    name = models.CharField(max_length=20)
+    amount = models.FloatField(default=0.0)
+    created_at = models.DateField(default=None)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-28 22:35+0530\n"
+"POT-Creation-Date: 2019-09-15 18:10+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,203 +18,339 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/jannath/settings.py:128
+#: jannath/settings.py:128
 msgid "English"
 msgstr ""
 
-#: src/jannath/settings.py:129
+#: jannath/settings.py:129
 msgid "Telugu"
 msgstr ""
 
-#: src/people/forms.py:23 src/people/forms.py:93
-msgid "date_of_birth"
+#: people/forms.py:24
+msgid "Date Of Birth"
 msgstr "పుట్టిన తేది"
 
-#: src/people/forms.py:24 src/people/forms.py:100
-msgid "mobile_no"
+#: people/forms.py:25 people/forms.py:103
+msgid "Mobile No"
 msgstr "మొబైల్ నం."
 
-#: src/people/forms.py:37
-msgid "user_name"
+#: people/forms.py:38
+msgid "User Name"
 msgstr "వ్యక్తి పేరు"
 
-#: src/people/forms.py:38
-msgid "password"
+#: people/forms.py:39
+msgid "Password"
 msgstr "పాస్వర్డ్"
 
-#: src/people/forms.py:57 src/people/forms.py:117
-msgid "id_or_full_name"
+#: people/forms.py:53
+msgid "Invalid Username or Password"
+msgstr ""
+
+#: people/forms.py:59 people/forms.py:141
+msgid "ID/Full Name"
 msgstr "అప్లికేషన్ నం./పూర్తి పేరు"
 
-#: src/people/forms.py:80 src/people/forms.py:150
+#: people/forms.py:82 people/forms.py:174
 msgid "Enter Application Number Or Full Name"
 msgstr "అప్లికేషన్ నం./పూర్తి పేరు"
 
-#: src/people/forms.py:85
+#: people/forms.py:88
 msgid "No Application Records Found"
-msgstr "ఇ అప్లికేషన్ నం./పూర్తి పేరు తొ ఎ అప్లికేషన్ లెదు"
+msgstr "ఈ అప్లికేషన్ నం./పూర్తి పేరు తొ ఏ రికార్డ్ లేదు"
 
-#: src/people/forms.py:90 src/people/models.py:18
-msgid "full_name"
+#: people/forms.py:97
+msgid "Full name"
 msgstr "పూర్తి పేరు"
 
-#: src/people/forms.py:91
-msgid "father_or_husband_name"
+#: people/forms.py:98
+msgid "Father or Husband Name"
 msgstr "తండ్రి/భర్త పేరు"
 
-#: src/people/forms.py:92
-msgid "nominee_name"
+#: people/forms.py:99
+msgid "Nominee Name"
 msgstr "నామిని పేరు"
 
-#: src/people/forms.py:98
-msgid "job"
+#: people/forms.py:100
+msgid "Date of Birth"
+msgstr "పుట్టిన తేది"
+
+#: people/forms.py:101
+msgid "Job"
 msgstr "ఉద్యోగం"
 
-#: src/people/forms.py:99
-msgid "address"
+#: people/forms.py:102
+msgid "Address"
 msgstr "చిరునామా"
 
-#: src/people/forms.py:104
-msgid "loan_amount"
-msgstr "ౠణము రూ/-"
+#: people/forms.py:107 people/views.py:133 people/views.py:392
+#: templates/monthbill.html:77
+msgid "Loan Amount"
+msgstr "అప్పు తీసుకున్న రూ/-"
 
-#: src/people/forms.py:105
-msgid "installment_amount"
+#: people/forms.py:108
+msgid "Installment Amount"
 msgstr "కిస్తీ రుపాయలు"
 
-#: src/people/forms.py:106
-msgid "number_of_emi"
+#: people/forms.py:109
+msgid "Number Of Emi"
 msgstr "కిస్తీ నం."
 
-#: src/people/forms.py:107
-msgid "rate_of_intrest"
+#: people/forms.py:110 people/views.py:134 people/views.py:393
+msgid "Rate Of Intrest"
 msgstr "వడ్డి రెటు"
 
-#: src/people/forms.py:111
-msgid "special_loan_amount"
-msgstr "స్పెషల్ ౠణము"
+#: people/forms.py:114 templates/monthbill.html:104
+msgid "Special Loan Amount"
+msgstr "ప్రత్యేక అప్పు రూ/-"
 
-#: src/people/forms.py:112
-msgid "special_rate_of_intrest"
+#: people/forms.py:115 people/views.py:143 people/views.py:402
+msgid "special Rate Of Intrest"
 msgstr "స్పెషల్ వడ్డి రెటు"
 
-#: src/people/forms.py:113
-msgid "special_intrest_amount"
-msgstr "స్పెషల్ వడ్డి రుపాయలు"
+#: people/forms.py:116 templates/monthbill.html:110
+msgid "Special Intrest Amount"
+msgstr "ప్రత్యేక మిత్తి రూ/- 100కి 2-00 చొప్పున    రూ/-"
 
-#: src/people/forms.py:137
+#: people/forms.py:120
+msgid "type"
+msgstr "ఎ రకమైన ష్టేట్మెంట్"
+
+#: people/forms.py:121
+msgid "loan"
+msgstr "అప్పు వివరాలు"
+
+#: people/forms.py:122
+msgid "short appu"
+msgstr "స్పెషల్ అప్పు వివరాలు"
+
+#: people/forms.py:123
+msgid "monthly/yearly"
+msgstr "బిల్లు వివరాలు"
+
+#: people/forms.py:124
+msgid "karchulu"
+msgstr "కర్చుల వివరాలు"
+
+#: people/forms.py:125
+msgid "labam_vivaralu"
+msgstr "లాభం వివరాలు"
+
+#: people/forms.py:126
+msgid "From Date"
+msgstr "ఈ తేది నుండి"
+
+#: people/forms.py:127
+msgid "To Date"
+msgstr "ఈ తేది వరకు"
+
+#: people/forms.py:131
+msgid "purpose"
+msgstr "ఖర్చుపెట్టిన కారనం"
+
+#: people/forms.py:132 people/forms.py:137
+msgid "expense"
+msgstr "రుపాయలు"
+
+#: people/forms.py:133 people/views.py:133 people/views.py:143
+#: people/views.py:392 people/views.py:402 templates/monthbill.html:67
+msgid "Date"
+msgstr "తేది"
+
+#: people/forms.py:161
 msgid "No Application with this Number"
 msgstr "ఇ అప్లికేషన్ నం. తొ ఎ అప్లికేషన్ లెదు"
 
-#: src/people/forms.py:146
+#: people/forms.py:170
 msgid "No Application with this Name"
 msgstr "ఇ పేరు తొ ఎ అప్లికేషన్ లెదు"
 
-#: src/people/forms.py:153
+#: people/forms.py:177
 msgid "Something went Horribly Wrong"
 msgstr ""
 
-#: src/templates/application.html:21
+#: people/models.py:18
+msgid "full_name"
+msgstr "పూర్తి పేరు"
+
+#: people/views.py:133 people/views.py:392 people/views.py:421
+#: templates/monthbill.html:84
+msgid "emi amount"
+msgstr "కిస్తీ రుపాయలు"
+
+#: people/views.py:134 people/views.py:393 templates/monthbill.html:79
+msgid "total_emi_no"
+msgstr "కిస్తీలు"
+
+#: people/views.py:134 people/views.py:144 people/views.py:393
+#: people/views.py:403
+msgid "status"
+msgstr "అప్పు యొక్క స్తితి"
+
+#: people/views.py:143 people/views.py:402 people/views.py:422
+msgid "specialloan"
+msgstr "స్పెషల్ లోను రుపాయలు"
+
+#: people/views.py:144 people/views.py:403 people/views.py:413
+#: people/views.py:422
+msgid "special_money"
+msgstr "స్పెషల్ వడ్డి రుపాయలు"
+
+#: people/views.py:392 people/views.py:402 templates/useraccount.html:9
+msgid "App.No:"
+msgstr "అప్లికేషన్ సంఖ్య:"
+
+#: people/views.py:413 people/views.py:422
+msgid "intrest_mon"
+msgstr "సాధారన వడ్డి రుపాయలు"
+
+#: people/views.py:414 people/views.py:423
+msgid "fine"
+msgstr "జరిమాన రుపాయలు"
+
+#: people/views.py:421
+msgid "bill no"
+msgstr "బిల్లు నెంబర్లు"
+
+#: people/views.py:421
+msgid "bill date"
+msgstr "బిల్లు తేది"
+
+#: people/views.py:421
+msgid "sharemoney"
+msgstr "శేర్సు రుపాయలు"
+
+#: people/views.py:423 templates/monthbill.html:122
+msgid "remaining debt"
+msgstr "మీగతా బాకి  రూ/-"
+
+#: people/views.py:423
+msgid "full pay"
+msgstr "ఫుల్ పేడ్"
+
+#: people/views.py:423 templates/monthbill.html:135
+msgid "Total"
+msgstr "మొత్తం రూ/-"
+
+#: templates/application.html:21 templates/statement.html:17
+#: templates/statement.html:22 templates/statement.html:27
+#: templates/useraccount.html:19 templates/useraccount.html:25
+#: templates/useraccount.html:30
 msgid "Submit"
 msgstr "సబ్మిట్"
 
-#: src/templates/base.html:40
+#: templates/base.html:40
 msgid "Home"
 msgstr "హొమె పేజ్"
 
-#: src/templates/base.html:41
+#: templates/base.html:41
 msgid "New Application"
 msgstr "కొత్త అప్లికేషన్"
 
-#: src/templates/base.html:42 src/templates/usersearch.html:13
+#: templates/base.html:42 templates/usersearch.html:14
 msgid "User Search"
 msgstr "సబ్యుడిని వెతుకు"
 
-#: src/templates/base.html:43
+#: templates/base.html:43
 msgid "Bill Pay"
 msgstr "బిల్ల్ కట్టాలి"
 
-#: src/templates/base.html:44
+#: templates/base.html:44
+msgid "Organisation Account"
+msgstr "సంగం వివరాలు"
+
+#: templates/base.html:45
 msgid "Logout"
 msgstr "లాగ్అవుట్"
 
-#: src/templates/bill.html:17
+#: templates/bill.html:17
 msgid "Bill Search"
 msgstr "బిల్ల్ వెతుకు"
 
-#: src/templates/monthbill.html:29
-msgid "App-Id"
-msgstr "అప్లికేషన్ నం.:"
+#: templates/login.html:36 templates/login.html:143
+msgid "Login"
+msgstr ""
 
-#: src/templates/monthbill.html:30
+#: templates/monthbill.html:65
+msgid "App-Id"
+msgstr "అప్లికేషన్ నం."
+
+#: templates/monthbill.html:66
 msgid "Full-Name"
 msgstr "పూర్తి పేరు"
 
-#: src/templates/monthbill.html:30
+#: templates/monthbill.html:66
 #, python-format
 msgid " %(name)s "
 msgstr ""
 
-#: src/templates/monthbill.html:36
-msgid "Date"
-msgstr "తేది"
-
-#: src/templates/monthbill.html:40
+#: templates/monthbill.html:71
 msgid "Share Amount"
 msgstr "షేర్సు రుపాయలు"
 
-#: src/templates/monthbill.html:47
-msgid "Loan Amount"
-msgstr "తీసుకున్న ౠణము"
+#: templates/monthbill.html:90
+msgid "paid loan amount"
+msgstr "చెల్లించిన ఋణం"
 
-#: src/templates/monthbill.html:54
-msgid "Emi Amount"
-msgstr "కిస్తీ రుపాయలు"
-
-#: src/templates/monthbill.html:61
-msgid "Balance Amount"
-msgstr "చెల్లించవలసిన ౠణము"
-
-#: src/templates/monthbill.html:68
-msgid "total_emi_no"
-msgstr "నిర్ణయించిన కిస్తీలు"
-
-#: src/templates/monthbill.html:75
+#: templates/monthbill.html:94
 msgid "Emi.No"
-msgstr "చెల్లించిన కిస్తీలు"
+msgstr "అప్పు కట్టుచున్న కిస్తీలు"
 
-#: src/templates/monthbill.html:82
-msgid "Rate Of Intrest"
-msgstr "వడ్డి రెటు"
-
-#: src/templates/monthbill.html:89
+#: templates/monthbill.html:98
 msgid "Intrest Amount"
-msgstr "నెల వడ్డి"
+msgstr "మిత్తి రూ/- 100కి 1-00 చొప్పున  రూ/-"
 
-#: src/templates/monthbill.html:96
-msgid "Total"
-msgstr "మొత్తం రూ/-"
+#: templates/monthbill.html:116
+msgid "Penality"
+msgstr "అపరాద రుసుం   రూ/-"
 
-#: src/templates/monthbill.html:105
+#: templates/monthbill.html:129
+msgid "Full Paid"
+msgstr "ఫుల్ పేడ్"
+
+#: templates/monthbill.html:144
 msgid "Print"
 msgstr "ప్రింట్"
 
-#: src/templates/monthbill.html:107
+#: templates/monthbill.html:146
 msgid "Edit Bill"
 msgstr "బిల్ల్ మార్పు"
 
-#: src/templates/success.html:5
+#: templates/statement.html:9 templates/useraccount.html:11
+msgid "Balance:"
+msgstr "బ్యలెన్స్:"
+
+#: templates/statement.html:11
+msgid "Expenditure Form"
+msgstr "ఖర్చు నమొదు చెయు ఫారం"
+
+#: templates/statement.html:12
+msgid "sangam statement"
+msgstr "సంగం వివరాలు పట్టిక"
+
+#: templates/statement.html:13
+msgid "profit"
+msgstr "మొత్తం లాభం"
+
+# msgid "Balance:"
+# msgstr "బ్యలెన్స్:"
+#: templates/success.html:5
 msgid "Your Application is saved and your id"
-msgstr ""
+msgstr "మీ అప్లికేషన్ స్వీకరించబడినది, మీ అప్లికేషన్ సంఖ్య"
 
-#: src/templates/useraccount.html:8
-msgid "App.No:"
-msgstr "అప్లికేషన్ సంఖ్య:"
-
-#: src/templates/useraccount.html:9
+#: templates/useraccount.html:10
 msgid "Full Name :"
 msgstr "పూర్తి పేరు:"
 
-#: src/templates/useraccount.html:10
-msgid "Balance:"
-msgstr "బ్యలెన్స్:"
+#: templates/useraccount.html:13
+msgid "Loan Form"
+msgstr "ౠణము ఫారం"
+
+# msgid "Loan Form"
+# msgstr "ౠణము ఫారం"
+#: templates/useraccount.html:14
+msgid "Special Loan Form"
+msgstr "స్పెషల్ ౠణము ఫారం"
+
+#: templates/useraccount.html:15
+msgid "Account Statement Form"
+msgstr "సబ్యుడిని పట్టిక"

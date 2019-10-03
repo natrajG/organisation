@@ -68,7 +68,7 @@ a, button{ display: inline-block; text-decoration: none; color: inherit; transit
 
 a:focus, a:active, a:hover,
 button:focus, button:active, button:hover,
-a b.light-color:hover{ text-decoration: none; color: #FFAD4D; }
+a b.light-color:hover{ text-decoration: none;}
 
 b{ font-weight: 500; }
 
@@ -91,7 +91,7 @@ b.light-color{ color: #444; }
 .btn{ font-size: .9em; padding: 15px 30px; border-radius: 1px; letter-spacing: 2px; 
 	border: 1px solid #FFAD4D; background: #FFAD4D; color: #fff; }
 
-.btn:hover{ color: #FFAD4D; background: none; }
+.btn:hover{ color: #000000; background: #fff; }
 
 .btn-2{ background: none; color: #FFAD4D; }
 

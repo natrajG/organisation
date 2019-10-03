@@ -1,7 +1,7 @@
 
 
 from .views import LoginView, HomeView, ApplicationView, UserSearchView, \
-    UserSearchResultView, LoanView, BillSearchView, BillPayView, SuccessView
+    UserSearchResultView, BillSearchView, BillPayView, SuccessView, GenerateStatementView
 import views
 from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
@@ -21,8 +21,8 @@ urlpatterns = [
 
     url(r'^bill_pay/(?P<app_id>\S*)$', BillPayView.as_view(), name='bill_pay'),
     # url(r'^rateofintrest/$', views.submit, name='rate_of_intrest'),
-    url(r'^loan$', LoanView.as_view(), name='loan'),
     url(r'^bill_search', BillSearchView.as_view(), name='bill_search'),
+    url(r'^get_statements', GenerateStatementView.as_view(), name='get_statements'),
     # url(r'^monthbill$', views.monthbill, name='monthbill'),
     # url(r'^bill_paid/(?P<appid>\d+)/(?P<date>\S*)/(?P<samount>\d+)/(?P<total>\d+)/(?P<loanid>\d+)/(?P<rm_pp>\d+)/(?P<intrest>\d+)/(?P<eamount>\d+)/(?P<emi_no>\d+)/$',
     #     views.bill_paid, name='billpaid'),

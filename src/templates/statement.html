@@ -1,0 +1,52 @@
+{% load i18n %}
+{% load staticfiles %}
+{% include "base.html" %}
+
+<div style="position:relative;top:300px;left:550px;">
+    {% if error %}
+    <p style="color:red">{{ error }}</p>
+    {% endif %}
+    {% trans 'Balance:' %} {{balance}} <br>
+
+    <button type="button"  class="btn btn-primary" value="Expenditure" id="expenditure_btn">{% trans 'Expenditure Form' %}</button>
+    <button type="button"  class="btn btn-primary" value="Account Statement Form" id="account_statement_btn">{% trans 'sangam statement' %}</button>
+    <button type="button"  class="btn btn-primary" value="Total Profit Form" id="total_profit_btn">{% trans 'profit' %}</button>
+    <form id="account_statement" method="POST" style="display:none;">
+        {% csrf_token %}
+        {{ forms.account_statement_form.as_p }}
+        <input type="submit" class="btn" onclick="myFunction()" value="{% trans 'Submit' %}">
+    </form>
+    <form id="expenditure" method="POST" style="display:none;">
+        {% csrf_token %}
+        {{ forms.expenditure_form.as_p }}
+        <input type="submit" class="btn" onclick="myFunction()" value="{% trans 'Submit' %}">
+    </form>
+    <form id="totalprofit" method="POST" style="display:none;">
+        {% csrf_token %}
+        {{ forms.total_profit_form.as_p }}
+        <input type="submit" class="btn" onclick="myFunction()" value="{% trans 'Submit' %}">
+    </form>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#expenditure_btn").click(function() {
+            $("#expenditure").show();
+            $("#account_statement").hide();
+            $("#totalprofit").hide();
+        });
+
+        $("#account_statement_btn").click(function() {
+            $("#expenditure").hide();
+            $("#account_statement").show();
+            $("#totalprofit").hide();
+        });
+
+        $("#total_profit_btn").click(function() {
+            $("#expenditure").hide();
+            $("#account_statement").hide();
+            $("#totalprofit").show();
+        });
+
+    });
+</script>

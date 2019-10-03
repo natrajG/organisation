@@ -13,96 +13,135 @@
     input[type=text] {
         display:none;
     }
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #section-to-print, #section-to-print * {
+        visibility: visible;
+      }
+      #section-to-print {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
 </style>
-
 <script>
+    function myFun() {
+        window.print()
+    }
+    var calculateTotal = function(){
+        var values = $('.editable, .summate').map(function(i, el) { return el.value}).get();
+        console.log("calculating total", values)
+        var total = values.reduce(function(c, a){
+            if(a){
+                return c + parseFloat(a);
+            } else {
+                return c;
+            }
+        }, 0.0);
+        $("#total_amount").val(total);
+    }
+
     $(document).ready(function() {
         $('#edit_btn').click(function() {
-            $('#edit_form input[type=text]').show();
-            $('#edit_form input[type=readonly]').hide();
+            $('.editable').removeAttr("readonly");
         });
+        $("input").change(function(){
+            calculateTotal();
+            $('.editable').attr('readonly', true);
+        });
+
+        setTimeout(function(){
+            calculateTotal();
+        }, 100);
     });
+
 </script>
 <div style="position:relative;top:300px;left:550px;">
 <form method="POST" id="edit_form">
-<div>
+<div id="section-to-print">
     <span>{% trans 'App-Id' %}: {{name.id}}</span><br>
     <span>{% trans 'Full-Name' %} : {% blocktrans with name=name %} {{name}} {% endblocktrans %}</span>
-</div>
+    <p>{% trans 'Date' %}: {{date}}</p>
 <br>
-<table>
-
-    <tr>
-        <td>{% trans 'Date' %}</td>
-        <td>{{date}}</td>
-    </tr>
+<table >
     <tr>
         <td>{% trans 'Share Amount' %} </td>
         <td>
-            <input type="readonly" value="{{share_amount}}">
-            <input type="text" value="{{share_amount}}">
+            <input class="editable" value="{{share_amount}}" readonly>
         </td>
     </tr>
     <tr>
-        <td>{% trans 'Loan Amount' %}</td>
+        <td>{% trans 'Loan Amount' %}
+            <input value="({{loan_amount}})" readonly>
+                {% trans 'total_emi_no' %}  ({{total_emi_no}})
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>{% trans 'emi amount' %}</td>
         <td>
-            <input type="readonly" value="{{loan_amount}}">
-            <input type="text" value="{{loan_amount}}">
+            <input class="summate" value="{{emi_amount}}" readonly>
         </td>
     </tr>
     <tr>
-        <td>{% trans 'Emi Amount' %}</td>
-        <td>
-            <input type="readonly" value="{{emi_amount}}">
-            <input type="text" value="{{emi_amount}}">
-        </td>
-    </tr>
-    <tr>
-        <td>{% trans 'Balance Amount' %}</td>
-        <td>
-            <input type="readonly" value="{{balance_amount}}">
-            <input type="text" value="{{balance_amount}}">
-        </td>
-    </tr>
-    <tr>
-        <td>{% trans 'total_emi_no' %}  ({{total_emi_no}})</td>
-        <td>
-            <!--<input type="readonly" value="{{total_emi_no}}">-->
-            <!--<input type="text" value="{{total_emi_no}}">-->
-        </td>
+        <td>{% trans 'paid loan amount' %} ({{paid_loan_amount}} )</td>
+        <td></td>
     </tr>
     <tr>
         <td>{% trans 'Emi.No' %}    ({{emi_no}})</td>
-        <td>
-            <!--<input type="readonly" value="{{emi_no}}">-->
-            <!--<input type="text" value="{{emi_no}}">-->
-        </td>
-    </tr>
-    <tr>
-        <td>{% trans 'Rate Of Intrest' %}   ({{rate}})%</td>
-        <td>
-            <!--<input type="readonly" value="{{rate}}">-->
-            <!--<input type="text" value="{{rate}}">-->
-        </td>
+        <td></td>
     </tr>
     <tr>
         <td>{% trans 'Intrest Amount' %}</td>
         <td>
-            <input type="readonly" value="{{intrest}}">
-            <input type="text" value="{{intrest}}">
+            <input class="summate" value="{{intrest}}" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'Special Loan Amount' %}  (       )</td>
+        <td>
+            <input name="special_loan_amount" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'Special Intrest Amount' %} </td>
+        <td>
+            <input name="special_intrest" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'Penality' %} </td>
+        <td>
+            <input class="editable" name="penality" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'remaining debt' %}   ({{remaining_debt}})</td>
+        <td>
+            <!--<input type="readonly" value="{{remaining_debt}}">-->
+            <!--<input value="{{remaining_debt}}">-->
+        </td>
+    </tr>
+    <tr>
+        <td>{% trans 'Full Paid' %}</td>
+        <td>
+            <input class="editable" name="full_paid" readonly>
         </td>
     </tr>
     <tr>
         <td>{% trans 'Total' %}</td>
         <td>
-            <input type="readonly" value="{{total}}">
-            <input type="text" value="{{total}}">
+            <input id="total_amount" name="total_amount" readonly>
         </td>
     </tr>
 </table>
+    </div>
 <br>
     {% csrf_token %}
-    <input type="submit" class="btn btn-primary" id="print_btn" value="{% trans 'Print' %}">
+    <input type="submit" class="btn btn-primary" id="print_btn" value="{% trans 'Print' %}" onClick="window.print()">
 </form>
 <input type="button" class="btn btn-primary" id="edit_btn" value="{% trans 'Edit Bill' %}">
 

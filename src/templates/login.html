@@ -1,77 +1,175 @@
-<!DOCTYPE html>
-<html>
+{% load staticfiles %}
+{% load i18n %}
+<!--<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">-->
+<!--<link rel="stylesheet" type="text/css" href="/static/admin/css/login.css">-->
+<!--&lt;!&ndash;<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">&ndash;&gt;-->
+<!--&lt;!&ndash;<link rel="stylesheet" href="{% static 'common-css/bootstrap.css' %}">&ndash;&gt;-->
+<!--<title>Login Form</title>-->
+<!--<meta charset="UTF-8">-->
 
-<title>Login Form</title>
-<meta charset="UTF-8">
-
-<header>
-    <center>
-  <h1>{{ title}}</h1>
-  {% load staticfiles %}
-    </center>
-</header>
-<body>
-    <!--<img src="{% static 'imgo.jpg' %}">-->
-    {% if error %}
-        <p>{{ error }}</p>
-    {% endif %}
-
-
-<!-- Header -->
-
-<center>
-<form method="POST" action="/people/login_success" id="logform">
-    {% csrf_token %}
-
-    {{ form.as_p }}
+<!--<header>-->
+    <!--<center>-->
+  <!--<h1>{{ title}}</h1>-->
+  <!--{% load staticfiles %}-->
+    <!--</center>-->
+<!--</header>-->
+<!--<body class=" login" data-admin-utc-offset="0">-->
+    <!--&lt;!&ndash;<img src="{% static 'imgo.jpg' %}">&ndash;&gt;-->
+    <!--{% if error %}-->
+        <!--<p>{{ error }}</p>-->
+    <!--{% endif %}-->
 
 
-    <input type="submit" value="Login" id="login">
+<!--&lt;!&ndash; Header &ndash;&gt;-->
 
 
-</form>
-<form method="get" action="/people/signup" id="signform">
-    {% csrf_token %}
+    <!--<div id="header">-->
+        <!--<div id="branding">-->
+            <!--<h1 id="site-name"><a href="/admin/">Login Form</a></h1>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div id="content" class="colM">-->
+    <!--<div id="content-main">-->
+        <!--<form class="form" method="post" id="logform">-->
+            <!--{% csrf_token %}-->
+                <!--{{ form.as_p }}-->
+                <!--<input type="submit" value="{% trans 'Login' %}" id="login">-->
+        <!--</form>-->
+        <!--<form method="get" action="/people/signup" id="signform">-->
+            <!--{% csrf_token %}-->
+
+            <!--<input type="submit" value="SignUp">-->
+            <!--&lt;!&ndash;<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>&ndash;&gt;-->
+        <!--</form>-->
+    <!--</div>-->
+        <!--</div>-->
 
 
-    <input type="submit" value="SignUp">
-    <!--<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>-->
+<!--&lt;!&ndash; Footer &ndash;&gt;-->
+<!--&lt;!&ndash;<footer class="w3-container w3-padding-64 w3-center w3-opacity">  &ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="w3-xlarge w3-padding-32">&ndash;&gt;-->
+   <!--&lt;!&ndash;<a href="#" class="w3-hover-text-indigo"><i class="fa fa-facebook-official"></i></a>&ndash;&gt;-->
+   <!--&lt;!&ndash;<a href="#" class="w3-hover-text-red"><i class="fa fa-pinterest-p"></i></a>&ndash;&gt;-->
+   <!--&lt;!&ndash;<a href="#" class="w3-hover-text-light-blue"><i class="fa fa-twitter"></i></a>&ndash;&gt;-->
+   <!--&lt;!&ndash;<a href="#" class="w3-hover-text-grey"><i class="fa fa-flickr"></i></a>&ndash;&gt;-->
+   <!--&lt;!&ndash;<a href="#" class="w3-hover-text-indigo"><i class="fa fa-linkedin"></i></a>&ndash;&gt;-->
+ <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</footer>&ndash;&gt;-->
+
+<!--<script>-->
+<!--// Used to toggle the menu on small screens when clicking on the menu button-->
+<!--function myFunction() {-->
+    <!--var x = document.getElementById("navDemo");-->
+    <!--if (x.className.indexOf("w3-show") == -1) {-->
+        <!--x.className += " w3-show";-->
+    <!--} else { -->
+        <!--x.className = x.className.replace(" w3-show", "");-->
+    <!--}-->
+<!--}-->
+<!--</script>-->
+
+<!--</body>-->
+
+<html lang="en"><head>
+<title>Log in | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/login.css">
 
 
-</form>
-
-<style>
-
-    form {
-    display:inline;
-    }
 
 
-</style>
-</center>
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
 
-<!-- Footer -->
-<!--<footer class="w3-container w3-padding-64 w3-center w3-opacity">  -->
-  <!--<div class="w3-xlarge w3-padding-32">-->
-   <!--<a href="#" class="w3-hover-text-indigo"><i class="fa fa-facebook-official"></i></a>-->
-   <!--<a href="#" class="w3-hover-text-red"><i class="fa fa-pinterest-p"></i></a>-->
-   <!--<a href="#" class="w3-hover-text-light-blue"><i class="fa fa-twitter"></i></a>-->
-   <!--<a href="#" class="w3-hover-text-grey"><i class="fa fa-flickr"></i></a>-->
-   <!--<a href="#" class="w3-hover-text-indigo"><i class="fa fa-linkedin"></i></a>-->
- <!--</div>-->
-<!--</footer>-->
 
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
+<body class=" login" data-admin-utc-offset="0">
 
-</body>
-</html>
+<!-- Container -->
+<div id="container">
+
+
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+
+<h1 id="site-name"><a href="">Login Form</a></h1>
+
+        </div>
+
+
+    </div>
+    <!-- END Header -->
+
+
+
+
+
+
+
+    <!-- Content -->
+    <div id="content" class="colM">
+
+
+
+
+
+
+
+<div id="content-main">
+
+
+
+<!--<form action="" method="post" id="logform"><input type="hidden" name="csrfmiddlewaretoken" value="ZRA0RSxZU88vMd4Az7nnPUT5ih6ECp6L12h4hL84EGHlSOtoQCb7k7XSOkQEPnWD">-->
+  <!--<div class="form-row">-->
+
+    <!--<label class="required" for="id_username">Username:</label> <input type="text" name="username" autofocus="" required="" id="id_username" maxlength="254">-->
+  <!--</div>-->
+  <!--<div class="form-row">-->
+
+    <!--<label class="required" for="id_password">Password:</label> <input type="password" name="password" required="" id="id_password">-->
+    <!--<input type="hidden" name="next" value="/admin/">-->
+  <!--</div>-->
+    <form class="form" method="post" id="logform">
+            {% csrf_token %}
+        <div class="form-row">
+
+            <label class="required" for="id_username">Username:</label>
+                {{form.user_name}}
+        </div>
+        <div class="form-row" width="0%">
+            <label class="required" for="id_password">Password:</label>
+                {{ form.password }}
+        </div>
+                <input type="submit" value="{% trans 'Login' %}" id="login">
+    </form>
+
+    <!--<form method="get" action="/people/signup" id="signform">-->
+        <!--{% csrf_token %}-->
+
+        <!--<input type="submit" value="SignUp">-->
+        <!--&lt;!&ndash;<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>&ndash;&gt;-->
+    <!--</form>-->
+
+  <!--<div class="submit-row">-->
+    <!--<label>&nbsp;</label><input type="submit" value="Log in">-->
+  <!--</div>-->
+<!--</form>-->
+
+</div>
+
+
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer">
+        <footer>
+            <span><h6>GR solutions Wgl 2019 ©</h6></span>
+        </footer>
+    </div>
+</div>
+<!-- END Container -->
+
+
+
+</body></html>

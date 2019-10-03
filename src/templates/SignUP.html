@@ -1,19 +1,109 @@
-<body>
-{% load i18n %}
+<!--<body>-->
+<!--{% load i18n %}-->
 
-<h1>{{ title}}</h1>
-<div>
-<form method="POST" action="/people/registered">
-    {% csrf_token %}
+<!--<h1>{{ title}}</h1>-->
+<!--<div>-->
+<!--<form method="POST" action="/people/registered">-->
+    <!--{% csrf_token %}-->
 
-    {{user_form.as_p}}
+    <!--{{user_form.as_p}}-->
 
-    {{ form.as_p }}
+    <!--{{ form.as_p }}-->
 
+
+    <!--<input type="submit" value="register">-->
+
+<!--</form>-->
+<!--</div>-->
+
+<html lang="en"><head>
+<title>Log in | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/login.css">
+
+
+
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+
+<body class=" login" data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+
+<h1 id="site-name"><a href="/admin/">Sign UP</a></h1>
+
+        </div>
+
+
+    </div>
+    <!-- END Header -->
+
+
+
+
+
+
+
+    <!-- Content -->
+    <div id="content" class="colM">
+
+
+
+
+
+
+
+<div id="content-main">
+
+
+
+<!--<form action="" method="post" id="logform"><input type="hidden" name="csrfmiddlewaretoken" value="ZRA0RSxZU88vMd4Az7nnPUT5ih6ECp6L12h4hL84EGHlSOtoQCb7k7XSOkQEPnWD">-->
+  <!--<div class="form-row">-->
+
+    <!--<label class="required" for="id_username">Username:</label> <input type="text" name="username" autofocus="" required="" id="id_username" maxlength="254">-->
+  <!--</div>-->
+  <!--<div class="form-row">-->
+
+    <!--<label class="required" for="id_password">Password:</label> <input type="password" name="password" required="" id="id_password">-->
+    <!--<input type="hidden" name="next" value="/admin/">-->
+  <!--</div>-->
+    <form method="POST" action="/people/">
+        {% csrf_token %}
+
+        {{user_form.as_p}}
+
+        {{ form.as_p }}
 
     <input type="submit" value="register">
 
-</form>
+    </form>
+
+  <!--<div class="submit-row">-->
+    <!--<label>&nbsp;</label><input type="submit" value="Log in">-->
+  <!--</div>-->
+<!--</form>-->
+
 </div>
+
+
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+
+
+</body></html>
 
 

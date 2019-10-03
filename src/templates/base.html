@@ -30,7 +30,7 @@
 
 	<header>
 
-		<div class="middle-menu center-text"><a href="#" class="logo"><img src="{% static 'images/logo.png' %}" alt="Logo Image"></a></div>
+		<div class="middle-menu center-text"><a href="#" class="logo"><img src="{% static 'images/imgo.jpg' %}" alt="Logo Image"></a></div>
 
 		<div class="bottom-area">
 
@@ -41,6 +41,7 @@
 				<li><a href="/people/new_application"> {% trans 'New Application' %}</a></li>
 				<li><a href="/people/user_search">{% trans 'User Search' %}</a></li>
 				<li><a href="/people/bill_search">{% trans 'Bill Pay' %}</a></li>
+				<li><a href="/people/get_statements">{% trans 'Organisation Account' %}</a></li>
 				<li><a href="/people/logout">{% trans 'Logout' %}</a></li>
 				<li>
 					<form action="{% url 'set_language' %}" method="post">
@@ -74,3 +75,11 @@
 	<script src="{% static 'common-js/scripts.js' %}"></script>
 
 </body>
+
+<!--<style>-->
+	<!--header .logo img {-->
+    <!--height: 138%;-->
+    <!--width: 100%;-->
+    <!--padding: 8px 8px;-->
+<!--}-->
+</style>

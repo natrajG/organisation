@@ -6,23 +6,28 @@
     left: 550px;
 ">
     {% get_current_language as LANGUAGE_CODE %}
-{{LANGUAGE_CODE}}
     <h4>{% trans 'App.No:' %} {{application_id}}</h4>
     <h4>{% trans 'Full Name :' %} {{name}}</h4>
     <h4>{% trans 'Balance:' %} {{balance}}</h4>
 
-    <button type="button"  class="btn btn-primary" value="Loan Form" id="loan_form_btn">Loan Form</button>
-    <button type="button"  class="btn btn-primary" value="Special Loan Form" id="special_loan_btn">Special Loan Form</button>
+    <button type="button"  class="btn btn-primary" value="Loan Form" id="loan_form_btn">{% trans 'Loan Form' %}</button>
+    <button type="button"  class="btn btn-primary" value="Special Loan Form" id="special_loan_btn">{% trans 'Special Loan Form' %}</button>
+    <button type="button"  class="btn btn-primary" value="Account Statement Form" id="account_statement_btn">{% trans 'Account Statement Form' %}</button>
     <form method="POST" id="loan_form" style="display:none;">
         {% csrf_token %}
             {{ forms.loan_form.as_p }}
-        <input type="submit" value="Submit">
+        <input type="submit" class="btn" value="{% trans 'Submit' %}">
 
     </form>
     <form id="special_loan" method="POST" style="display:none;">
         {% csrf_token %}
         {{ forms.specialLoan_form.as_p }}
-        <input type="submit" value="Submit">
+        <input type="submit" class="btn" value="{% trans 'Submit' %}">
+    </form>
+    <form id="account_statement" method="POST" style="display:none;">
+        {% csrf_token %}
+        {{ forms.account_statement_form.as_p }}
+        <input type="submit" class="btn" value="{% trans 'Submit' %}">
     </form>
 </div>
 
@@ -55,6 +60,7 @@ jQuery('#id_special_intrest_amount').focus(function(){
             } else {
                 $("#loan_form").show();
                 $("#special_loan").hide();
+                $("#account_statement").hide();
             }
             });
         $("#special_loan_btn").click(function() {
@@ -63,7 +69,15 @@ jQuery('#id_special_intrest_amount').focus(function(){
             } else {
                 $("#special_loan").show();
                 $("#loan_form").hide();
+                $("#account_statement").hide();
             }
         });
+        $("#account_statement_btn").click(function() {
+            $("#special_loan").hide();
+            $("#loan_form").hide();
+            $("#account_statement").show();
+        });
+
+
     });
 </script>
