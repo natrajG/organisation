@@ -104,7 +104,7 @@ class ApplicationForm(forms.Form):
         date_of_birth = forms.DateField(label=_('Date of Birth'), widget=DateInput)
         job = forms.CharField(label=_('Job'))
         address = forms.CharField(label=_('Address'))
-        mobile_no = forms.IntegerField(label=_('Mobile No'))
+        mobile_no = forms.CharField(label=_('Mobile No'))
 
 
 class LoanForm(forms.Form):

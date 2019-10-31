@@ -15,11 +15,11 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from django.conf.urls.i18n import i18n_patterns, set_language
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^i18n/setlang', include('django.conf.urls.i18n')),
+    url(r'^people/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += i18n_patterns(

@@ -48,5 +48,39 @@
             $("#totalprofit").show();
         });
 
+        $("#totalprofit").submit(function(e) {
+            $( '#totalprofit' ).each(function(){
+                this.reset();
+            });
+            <!--$("#totalprofit").hide();-->
+        });
+
+        $("#account_statement").submit(function(e) {
+            $( '#account_statement' ).each(function(){
+                this.reset();
+            });
+            <!--$("#account_statement").hide();-->
+        });
+
+        $("#expenditure").submit(function(e) {
+            $( '#expenditure' ).each(function(){
+                this.reset();
+            });
+            <!--$("#expenditure").hide();-->
+        });
+        var validateUsername = function(e) {
+        var a = [];
+        var k = e.which;
+
+        for (var i = 48; i < 58; i++)
+            a.push(i);
+
+        if (!(a.indexOf(k)>=0))
+            e.preventDefault();
+        };
+
+        $('#id_amount').on('keypress', validateUsername);
+        $('#id_total_profit_amount').on('keypress', validateUsername);
+
     });
 </script>

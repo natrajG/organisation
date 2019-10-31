@@ -8,7 +8,7 @@ from .models import Application, Bills, SignUp, SavingAccount, OrganisationAccou
 from datetime import datetime
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.auth.decorators import login_required
+
 from django.views.decorators.cache import cache_control
 from django.contrib.auth import login, logout
 from django.contrib import auth
@@ -31,6 +31,7 @@ class LoginView(FormView):
 
     def form_valid(self, form):
         login(self.request, form.user_name)
+        self.request.session.set_expiry(300)
 
         return HttpResponseRedirect('/people/login_success')
 
@@ -219,7 +220,7 @@ class ApplicationView(FormView):
             mobile_no = request.POST.get('mobile_no', '')
             from django.urls import reverse
             if len(mobile_no) != 10:
-                raise ValueError('please enter 10 digit mobile number')
+                raise Exception('please enter 10 digit mobile number')
 
             app = Application(full_name=full_name, father_or_husband_name=father_or_husband_name,
                               nominee_name=nominee_name,
@@ -230,8 +231,8 @@ class ApplicationView(FormView):
             saving_account = SavingAccount(appid_id=app.id, date=date, balance=0)
             saving_account.save()
             return HttpResponseRedirect('/people/success/{app_id}'.format(app_id=app.id))
-        except Exception, e:
-            return HttpResponseRedirect(reverse('please enter 10 digit mobile number'))
+        except ValueError:
+            return HttpResponse('<h1>please enter 10 digit mobile number</h1>')
 
 
 class LoanView(FormView):
@@ -383,7 +384,7 @@ class GenerateStatementView(TemplateView,
             org_acc = OrganisationAccount.objects.latest('id')
             context['balance'] = org_acc.balance
         except OrganisationAccount.DoesNotExist:
-            raise ValueError('No record in Organisation Account')
+            context['balance'] = 0.00
         return context
 
     def post(self, request, *args, **kwargs):
@@ -450,7 +451,12 @@ class GenerateStatementView(TemplateView,
                                                          amount=request.POST.get('amount'),
                                                          created_at=request.POST.get('date'))
             exp_amount.save()
-            return HttpResponseRedirect('/people/login_success')
+        elif request.POST.get('total_profit_amount'):
+            profit = request.POST.get('total_profit_amount')
+            save_acc = SavingAccount.objects.all()
+            for acc in save_acc:
+                acc.balance += float(profit)
+                acc.save()
 
         return response
 

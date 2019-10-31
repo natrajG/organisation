@@ -56,6 +56,21 @@
         setTimeout(function(){
             calculateTotal();
         }, 100);
+
+        var validateUsername = function(e) {
+        var a = [];
+        var k = e.which;
+
+        for (var i = 48; i < 58; i++)
+            a.push(i);
+
+        if (!(a.indexOf(k)>=0))
+            e.preventDefault();
+        };
+
+        $('#id_share_amount').on('keypress', validateUsername);
+        $('#id_full_paid').on('keypress', validateUsername);
+        $('#id_penality').on('keypress', validateUsername);
     });
 
 </script>
@@ -70,7 +85,7 @@
     <tr>
         <td>{% trans 'Share Amount' %} </td>
         <td>
-            <input class="editable" value="{{share_amount}}" readonly>
+            <input class="editable" value="{{share_amount}}" id="id_share_amount" readonly>
         </td>
     </tr>
     <tr>
@@ -115,7 +130,7 @@
     <tr>
         <td>{% trans 'Penality' %} </td>
         <td>
-            <input class="editable" name="penality" readonly>
+            <input class="editable" name="penality" id="id_penality" readonly>
         </td>
     </tr>
     <tr>
@@ -128,7 +143,7 @@
     <tr>
         <td>{% trans 'Full Paid' %}</td>
         <td>
-            <input class="editable" name="full_paid" readonly>
+            <input class="editable" name="full_paid" id="id_full_paid" readonly>
         </td>
     </tr>
     <tr>

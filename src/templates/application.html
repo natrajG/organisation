@@ -10,7 +10,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <div style="position:relative;top:300px;">
-    <form method="POST" action=""  align="center">
+    <form method="POST" action=""  align="center" id="app_form">
         {% csrf_token %}
                 {% for field in form %}
                     {{ field.errors }}
@@ -18,7 +18,11 @@
                         <label class="col-sm-1 control-label" for="id_{{ field.name }}">{{ field.label }}</label>{{ field }}
                     </div>
                 {% endfor %}
-        <button type="submit" class="btn" >{% trans 'Submit' %}</button>
+        <div id="error_msg" class="alert alert-danger" style="display:none;">
+            <strong>{% trans 'Please enter 10-digit Mobile number' %}</strong>
+        </div>
+        <button id="app_id" type="submit" class="btn" >{% trans 'Submit' %}</button>
     </form>
 </div>
+<script src="{% static 'js/general.js' %}"></script>
 

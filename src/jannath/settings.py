@@ -125,12 +125,12 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGES = (
-    ('en', _('English')),
     ('te', _('Telugu')),
+    ('en', _('English'))
 )
 
 # Set the default language for your site.
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'te'
 
 # Tell Django where the project's translation files should be.
 LOCALE_PATHS = (
