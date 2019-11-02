@@ -31,7 +31,7 @@ class LoginView(FormView):
 
     def form_valid(self, form):
         login(self.request, form.user_name)
-        self.request.session.set_expiry(300)
+        self.request.session.set_expiry(900)
 
         return HttpResponseRedirect('/people/login_success')
 
@@ -83,6 +83,8 @@ class UserSearchResultView(TemplateView,
         context['application_id'] = app1.id
         context['name'] = app1.full_name
         context['balance'] = useraccount.balance
+        from django.core.urlresolvers import reverse_lazy
+        context['form_validation_url'] = reverse_lazy('loan_amount_validation')
 
         return context
 
@@ -98,10 +100,11 @@ class UserSearchResultView(TemplateView,
             statement_type = request.POST.get('type')
             from_date = request.POST.get('from_date')
             to_date = request.POST.get('to_date')
-            org_account = OrganisationAccount.objects.latest('id')
+            if not statement_type:
+                org_account = OrganisationAccount.objects.latest('id')
             if loan_amount:
                 if org_account.balance < float(loan_amount):
-                    raise
+                    raise ValueError("OrganisationAccount Balance is only %s" % org_account.balance)
                 installment_amount = request.POST.get('installment_amount')
                 number_of_emi = request.POST.get('number_of_emi')
                 rate_of_intrest = request.POST.get('rate_of_intrest')
@@ -137,7 +140,7 @@ class UserSearchResultView(TemplateView,
                         var = (loan.created_at, loan.loan_amount, loan.emi_amount,
                                loan.no_of_emis, loan.rate_of_intrest, loan.status)
                         writer.writerow(var)
-                elif statement_type == 'special_loan':
+                elif statement_type == 'short appu':
                     special_loan_details = SpecialLoan.objects.filter(appid_id=self.kwargs['appid'],
                                                               created_at__lte=to_date,
                                                               created_at__gte=from_date)
@@ -165,8 +168,8 @@ class UserSearchResultView(TemplateView,
                         print e
                 return response
             return HttpResponseRedirect('/people/login_success')
-        except Exception as e:
-            print e
+        except OrganisationAccount.DoesNotExist:
+            raise ValueError("Poll does not exist")
 
 
 def signUpForm(request):
@@ -459,4 +462,23 @@ class GenerateStatementView(TemplateView,
                 acc.save()
 
         return response
+
+
+def get_org_account_balance(request):
+    data = {}
+    loan_amount = request.GET.get('loan_amount', None)
+    try:
+        if loan_amount:
+            org_account = OrganisationAccount.objects.latest('id')
+            if org_account.balance < float(loan_amount):
+                data = {
+                    "message": _(
+                        "Organisation Account Balance is only %s"
+                        % org_account.balance)}
+        return JsonResponse(data)
+
+    except OrganisationAccount.DoesNotExist:
+        data = {'message': _("No Balance in Organisation Account")}
+        return JsonResponse(data)
+
 

@@ -69,7 +69,7 @@ MIDDLEWARE_CLASSES = (
 
 # LOGIN_EXEMPT_URLS = ['/people/']
 
-# LOGIN_URL = '/people'
+LOGIN_URL = '/people'
 
 ROOT_URLCONF = 'jannath.urls'
 GOOGLE_TAG_ID = 'GTM-T5B2C5'

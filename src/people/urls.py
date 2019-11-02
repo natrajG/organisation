@@ -32,4 +32,7 @@ urlpatterns = [
     # url(r'^login/$', auth_views.login, name='login'),
     # url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
+    url(r'^loan_amount_validation/$',
+        views.get_org_account_balance,
+        name='loan_amount_validation')
 ]

@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52c9ed28-bde4-4398-a66c-ef0db7be1acf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/js/general.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jannath/settings.py" afterPath="$PROJECT_DIR$/src/jannath/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jannath/urls.py" afterPath="$PROJECT_DIR$/src/jannath/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/locale/te/LC_MESSAGES/django.mo" afterPath="$PROJECT_DIR$/src/locale/te/LC_MESSAGES/django.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/locale/te/LC_MESSAGES/django.po" afterPath="$PROJECT_DIR$/src/locale/te/LC_MESSAGES/django.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/people/forms.py" afterPath="$PROJECT_DIR$/src/people/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/people/models.py" afterPath="$PROJECT_DIR$/src/people/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/people/urls.py" afterPath="$PROJECT_DIR$/src/people/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/people/views.py" afterPath="$PROJECT_DIR$/src/people/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/application.html" afterPath="$PROJECT_DIR$/src/templates/application.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/base.html" afterPath="$PROJECT_DIR$/src/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/login.html" afterPath="$PROJECT_DIR$/src/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/monthbill.html" afterPath="$PROJECT_DIR$/src/templates/monthbill.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/statement.html" afterPath="$PROJECT_DIR$/src/templates/statement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/useraccount.html" afterPath="$PROJECT_DIR$/src/templates/useraccount.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,29 +31,69 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jannath/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="83">
+              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bill.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/bill.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/people/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="199">
+              <caret line="478" column="0" lean-forward="true" selection-start-line="478" selection-start-column="0" selection-end-line="478" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/people/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="monthbill.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/templates/monthbill.html">
+      <file leaf-file-name="useraccount.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/templates/useraccount.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="252">
+              <caret line="85" column="64" lean-forward="false" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="64" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/people/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="36" />
+              <folding>
+                <element signature="e#2#166#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jannath/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+              <folding>
+                <element signature="e#560#601#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,21 +101,9 @@
       <file leaf-file-name="statement.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/statement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="81" column="57" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="81" selection-end-column="57" />
+            <state relative-caret-position="235">
+              <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/application.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#head#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -92,8 +111,8 @@
       <file leaf-file-name="general.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/static/js/general.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="62" column="56" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="62" selection-end-column="56" />
+            <state relative-caret-position="1116">
+              <caret line="62" column="56" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="62" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -111,36 +130,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>applicat</find>
-      <find>ApplicationForm</find>
-      <find>UserSearchForm</find>
-      <find>lab</find>
-      <find>user_account</find>
-      <find>login_required</find>
-      <find>generic</find>
-      <find>#333</find>
-      <find>font-family</find>
-      <find>alert-danger</find>
-      <find>&quot;Roboto&quot;,&quot;Lucida</find>
-      <find>s</find>
-      <find>st</find>
-      <find>sta</find>
-      <find>stat</find>
-      <find>validateInternationalPhoneNumber</find>
-      <find>invaid</find>
-      <find>inv</find>
-      <find>'en'</find>
-      <find>LANGUAGE_CODE</find>
-      <find>'en-us'</find>
-      <find>USE_I18N</find>
-      <find>raise</find>
+      <find>loan al</find>
+      <find>_(</find>
+      <find>Data too long for column 'address' at row 1</find>
+      <find>Data too long for column 'address' at row</find>
+      <find>Data too long for column 'address' at row</find>
+      <find>Data too long for column 'address' at ro</find>
+      <find>Data too long for column 'address' at r</find>
+      <find>Data too long for column 'address' at</find>
+      <find>Data too long for column 'address' at</find>
+      <find>Data too long for column 'a</find>
+      <find>Data too long for column '</find>
+      <find>Data too long for column</find>
+      <find>Data too long for column</find>
+      <find>Data too long for colum</find>
+      <find>Data too long fo</find>
+      <find>Data too long f</find>
+      <find>Data too lo</find>
+      <find>Data too l</find>
+      <find>Data too</find>
+      <find>Data too</find>
+      <find>Data to</find>
+      <find>Data t</find>
+      <find>Data</find>
+      <find>Data</find>
+      <find>Dat</find>
+      <find>labam_vivaralu</find>
       <find>application</find>
-      <find>ValidationError</find>
-      <find>SavingAccount</find>
-      <find>OrganisationAccount</find>
-      <find>id_mobile_no</find>
-      <find>No record in Organisation Account</find>
-      <find>expense</find>
+      <find>expenditure</find>
+      <find>special_loan_btn</find>
+      <find>AccountStatementForm</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,20 +168,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/people/urls.py" />
         <option value="$PROJECT_DIR$/src/static/admin/css/base.css" />
         <option value="$PROJECT_DIR$/src/templates/login.html" />
         <option value="$PROJECT_DIR$/src/templates/base.html" />
         <option value="$PROJECT_DIR$/src/locale/te/LC_MESSAGES/django.po" />
         <option value="$PROJECT_DIR$/src/jannath/urls.py" />
-        <option value="$PROJECT_DIR$/src/jannath/settings.py" />
-        <option value="$PROJECT_DIR$/src/people/models.py" />
         <option value="$PROJECT_DIR$/src/people/forms.py" />
         <option value="$PROJECT_DIR$/src/templates/application.html" />
-        <option value="$PROJECT_DIR$/src/people/views.py" />
         <option value="$PROJECT_DIR$/src/static/js/general.js" />
-        <option value="$PROJECT_DIR$/src/templates/statement.html" />
         <option value="$PROJECT_DIR$/src/templates/monthbill.html" />
+        <option value="$PROJECT_DIR$/src/jannath/settings.py" />
+        <option value="$PROJECT_DIR$/src/people/urls.py" />
+        <option value="$PROJECT_DIR$/src/people/models.py" />
+        <option value="$PROJECT_DIR$/src/templates/statement.html" />
+        <option value="$PROJECT_DIR$/src/people/views.py" />
+        <option value="$PROJECT_DIR$/src/templates/useraccount.html" />
       </list>
     </option>
   </component>
@@ -195,6 +215,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -235,14 +257,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="people" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oraganisation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="organisation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="people" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oraganisation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="organisation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jannath" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -251,7 +311,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="bill&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/bill.html&#10;appl&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/application.html&#10;bill.h&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/bill.html&#10;dja&#9;FILE&#9;file:///home/ngudimalla/organisation/src/locale/te/LC_MESSAGES/django.po&#10;ur&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;state&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;form&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;mo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/monthbill.html&#10;for&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;d&#9;FILE&#9;file:///home/ngudimalla/organisation/src/locale/te/LC_MESSAGES/django.po&#10;stat&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;loan.html&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/loan.html&#10;urls&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;fo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;mod&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/models.py&#10;loa&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/loan.html&#10;bas&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/base.html&#10;url&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;base&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/base.html&#10;boo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/static/common-css/bootstrap.css&#10;sett&#9;FILE&#9;file:///home/ngudimalla/organisation/src/jannath/settings.py&#10;re&#9;FILE&#9;file:///home/ngudimalla/organisation/requirements.txt&#10;body&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/body.html&#10;admin&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/admin.py&#10;head&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/header.html&#10;us&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/useraccount.html&#10;app&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/application.html&#10;hea&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/header.html&#10;month&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/monthbill.html&#10;user&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/useraccount.html&#10;bil&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill_paid.html&#10;loan&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/loan.html&#10;usersearch.html&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/usersearch.html&#10;lo&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/login_success.html&#10;logi&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/login.html&#10;mon&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/monthbill.html&#10;pa&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill_paid.html&#10;bill.&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill.html" />
+    <property name="SearchEverywhereHistoryKey" value="statement.html&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;useraccount.html&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/useraccount.html&#10;vi&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/views.py&#10;bill&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/bill.html&#10;appl&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/application.html&#10;bill.h&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/bill.html&#10;dja&#9;FILE&#9;file:///home/ngudimalla/organisation/src/locale/te/LC_MESSAGES/django.po&#10;ur&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;state&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;form&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;mo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/monthbill.html&#10;for&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;d&#9;FILE&#9;file:///home/ngudimalla/organisation/src/locale/te/LC_MESSAGES/django.po&#10;stat&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;loan.html&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/loan.html&#10;urls&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;fo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;mod&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/models.py&#10;loa&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/loan.html&#10;bas&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/base.html&#10;url&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;base&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/base.html&#10;boo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/static/common-css/bootstrap.css&#10;sett&#9;FILE&#9;file:///home/ngudimalla/organisation/src/jannath/settings.py&#10;re&#9;FILE&#9;file:///home/ngudimalla/organisation/requirements.txt&#10;body&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/body.html&#10;admin&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/admin.py&#10;head&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/header.html&#10;us&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/useraccount.html&#10;app&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/application.html&#10;hea&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/header.html&#10;month&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/monthbill.html&#10;user&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/useraccount.html&#10;bil&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill_paid.html&#10;loan&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/loan.html&#10;usersearch.html&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/usersearch.html&#10;lo&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/login_success.html&#10;logi&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/login.html&#10;mon&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/monthbill.html&#10;pa&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill_paid.html&#10;bill.&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill.html" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -456,7 +516,7 @@
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21673307" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21992032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -464,8 +524,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45820433" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19040248" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45665634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22910216" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -514,23 +574,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/people/views.py</url>
-          <line>202</line>
+          <line>205</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/people/views.py</url>
-          <line>199</line>
+          <line>202</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/people/views.py</url>
-          <line>189</line>
+          <line>192</line>
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/people/views.py</url>
-          <line>460</line>
-          <option name="timeStamp" value="15" />
+          <line>104</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/people/views.py</url>
+          <line>97</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -540,11 +605,61 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/jannath/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/bill.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/statement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="81" column="57" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="81" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/application.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#head#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/static/js/general.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1116">
+          <caret line="62" column="56" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="62" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/monthbill.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1278">
+          <caret line="71" column="31" lean-forward="true" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jannath/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -601,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3438">
           <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -609,7 +723,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#head#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -754,29 +870,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jannath/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding>
-            <element signature="e#560#601#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3438">
           <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/org_proj/local/lib/python2.7/site-packages/django/views/generic/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2592">
-          <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -785,59 +882,15 @@
         <state relative-caret-position="360">
           <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="26" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#head#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/people/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="140" column="58" lean-forward="false" selection-start-line="140" selection-start-column="51" selection-end-line="140" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/people/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="66" column="11" lean-forward="false" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/people/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="460" column="0" lean-forward="false" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#head#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/static/js/general.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="62" column="56" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="62" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/people/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding>
-            <element signature="e#2#166#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jannath/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1116">
+          <caret line="62" column="56" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="62" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -850,19 +903,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/statement.html">
+    <entry file="file://$PROJECT_DIR$/src/templates/monthbill.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="81" column="57" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="81" selection-end-column="57" />
+        <state relative-caret-position="180">
+          <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/monthbill.html">
+    <entry file="file://$PROJECT_DIR$/src/jannath/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state relative-caret-position="83">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jannath/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding>
+            <element signature="e#560#601#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/org_proj/local/lib/python2.7/site-packages/django/views/generic/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/org_proj/local/lib/python2.7/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/people/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="36" />
+          <folding>
+            <element signature="e#2#166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/people/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/people/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="122" column="6" lean-forward="false" selection-start-line="122" selection-start-column="6" selection-end-line="122" selection-end-column="6" />
+          <folding>
+            <element signature="e#25#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/statement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/people/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="478" column="0" lean-forward="true" selection-start-line="478" selection-start-column="0" selection-end-line="478" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/useraccount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="85" column="64" lean-forward="false" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="64" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

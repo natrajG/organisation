@@ -13,22 +13,29 @@
     <button type="button"  class="btn btn-primary" value="Loan Form" id="loan_form_btn">{% trans 'Loan Form' %}</button>
     <button type="button"  class="btn btn-primary" value="Special Loan Form" id="special_loan_btn">{% trans 'Special Loan Form' %}</button>
     <button type="button"  class="btn btn-primary" value="Account Statement Form" id="account_statement_btn">{% trans 'Account Statement Form' %}</button>
+    <div id="loan_msg" class="alert alert-danger" style="display:none;">
+        <strong>{% trans 'loan already exists' %}</strong>
+    </div>
+    <div id="special_loan_msg" class="alert alert-danger" style="display:none;">
+        <strong>{% trans 'Special loan already exists' %}</strong>
+    </div>
     <form method="POST" id="loan_form" style="display:none;">
         {% csrf_token %}
             {{ forms.loan_form.as_p }}
-        <input type="submit" class="btn" value="{% trans 'Submit' %}">
+        <input id="loan_btn" type="submit" class="btn" value="{% trans 'Submit' %}">
 
     </form>
     <form id="special_loan" method="POST" style="display:none;">
         {% csrf_token %}
         {{ forms.specialLoan_form.as_p }}
-        <input type="submit" class="btn" value="{% trans 'Submit' %}">
+        <input id="special_loan_bttn" type="submit" class="btn" value="{% trans 'Submit' %}">
     </form>
     <form id="account_statement" method="POST" style="display:none;">
         {% csrf_token %}
         {{ forms.account_statement_form.as_p }}
         <input type="submit" class="btn" value="{% trans 'Submit' %}">
     </form>
+    <div id="msg" class="alert alert-danger" style="display:none;"></div>
 </div>
 
 <script>
@@ -56,28 +63,107 @@ jQuery('#id_special_intrest_amount').focus(function(){
         $("#loan_form_btn").click(function() {
             if (str.toString() == 'True')  {
                 $("#special_loan").hide();
-                alert('loan already exists');
+                $("#loan_msg").show();
+                $("#special_loan").hide();
+                $("#account_statement").hide();
             } else {
                 $("#loan_form").show();
                 $("#special_loan").hide();
                 $("#account_statement").hide();
             }
+            $("#msg").hide();
+            $("#special_loan_msg").hide();
             });
         $("#special_loan_btn").click(function() {
             if (str1.toString() == 'True') {
-                alert('Special Loan Already exists');
+                $("#special_loan_msg").show();
+                $("#loan_form").hide();
+                $("#account_statement").hide();
             } else {
                 $("#special_loan").show();
                 $("#loan_form").hide();
                 $("#account_statement").hide();
+                $("#special_loan_bttn").attr("disabled", false);
             }
+            $("#msg").hide();
+            $("#loan_msg").hide();
         });
         $("#account_statement_btn").click(function() {
             $("#special_loan").hide();
             $("#loan_form").hide();
             $("#account_statement").show();
+            $("#msg").hide();
+            $("#special_loan_msg").hide();
+            $("#loan_msg").hide();
+
         });
 
+        var validateUsername = function(e) {
+        var a = [];
+        var k = e.which;
+
+        for (var i = 48; i < 58; i++)
+            a.push(i);
+
+        if (!(a.indexOf(k)>=0))
+            e.preventDefault();
+        };
+
+        // loan details
+
+        $('#id_loan_amount').on('keypress', validateUsername);
+        $('#id_installment_amount').on('keypress', validateUsername);
+        $("#id_number_of_emi").prop("readonly", true);
+        $("#id_loan_amount").on('focus', function(){
+            $("#msg").hide();
+            $("#loan_btn").attr("disabled", false);
+        });
+
+        // special loan details
+
+        $('#id_special_loan_amount').on('keypress', validateUsername);
+        $("#id_special_intrest_amount").prop("readonly", true);
+        $("#id_special_loan_amount").on('focus', function(){
+            $("#msg").hide();
+            $("#special_loan_bttn").attr("disabled", false);
+        });
+
+        var loanAmountValidation = function(response){
+        $("#msg").hide();
+        if(response.message){
+            $("#msg").html(response.message);
+            $("#msg").show();
+            $("#loan_btn").attr("disabled", true);
+            $("#special_loan_bttn").attr("disabled", true);
+        }
+    };
+
+        var loanAmountForm = function(data, successFunc){
+        $.ajax({
+            url: window.registration_validation_url,
+            data: data,
+            dataType: 'json',
+            success: function(data) {
+                 successFunc(data);
+            },
+        })
+    };
+
+        $("#id_loan_amount").on('blur', function(e){
+        var value = e.target.value;
+        loanAmountForm({
+            "loan_amount": value
+        }, loanAmountValidation);
+    });
+    $("#id_special_loan_amount").on('blur', function(e){
+        var value = e.target.value;
+        loanAmountForm({
+            "loan_amount": value
+        }, loanAmountValidation);
+    });
 
     });
+    window.registration_validation_url = "{{ form_validation_url }}";
+    $("#id_type Option[value='karchulu']").hide();
+    $("#id_type Option[value='labam_vivaralu']").hide();
 </script>
