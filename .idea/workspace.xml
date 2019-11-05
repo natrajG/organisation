@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52c9ed28-bde4-4398-a66c-ef0db7be1acf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jannath/settings.py" afterPath="$PROJECT_DIR$/src/jannath/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/people/models.py" afterPath="$PROJECT_DIR$/src/people/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/people/urls.py" afterPath="$PROJECT_DIR$/src/people/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/people/views.py" afterPath="$PROJECT_DIR$/src/people/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/monthbill.html" afterPath="$PROJECT_DIR$/src/templates/monthbill.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/statement.html" afterPath="$PROJECT_DIR$/src/templates/statement.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/useraccount.html" afterPath="$PROJECT_DIR$/src/templates/useraccount.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,18 +30,18 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jannath/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="115" column="24" lean-forward="true" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/people/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="478" column="0" lean-forward="true" selection-start-line="478" selection-start-column="0" selection-end-line="478" selection-end-column="0" />
+            <state relative-caret-position="227">
+              <caret line="462" column="34" lean-forward="true" selection-start-line="462" selection-start-column="34" selection-end-line="462" selection-end-column="34" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -50,26 +49,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/people/models.py">
+      <file leaf-file-name="django.po" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/locale/te/LC_MESSAGES/django.po">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="32">
+              <caret line="130" column="15" lean-forward="false" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="useraccount.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/people/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="39" column="6" lean-forward="false" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="exception.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/org_proj/local/lib/python2.7/site-packages/django/core/handlers/exception.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="86">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="useraccount.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/useraccount.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="85" column="64" lean-forward="false" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="64" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="405">
+              <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monthbill.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/monthbill.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="123" column="8" lean-forward="true" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,8 +102,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/people/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="36" />
+            <state relative-caret-position="162">
+              <caret line="19" column="67" lean-forward="false" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
               <folding>
                 <element signature="e#2#166#0" expanded="true" />
               </folding>
@@ -101,18 +126,8 @@
       <file leaf-file-name="statement.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/statement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="general.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/static/js/general.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="62" column="56" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="62" selection-end-column="56" />
+            <state relative-caret-position="78">
+              <caret line="50" column="47" lean-forward="false" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -130,36 +145,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loan al</find>
-      <find>_(</find>
-      <find>Data too long for column 'address' at row 1</find>
-      <find>Data too long for column 'address' at row</find>
-      <find>Data too long for column 'address' at row</find>
-      <find>Data too long for column 'address' at ro</find>
-      <find>Data too long for column 'address' at r</find>
-      <find>Data too long for column 'address' at</find>
-      <find>Data too long for column 'address' at</find>
-      <find>Data too long for column 'a</find>
-      <find>Data too long for column '</find>
-      <find>Data too long for column</find>
-      <find>Data too long for column</find>
-      <find>Data too long for colum</find>
-      <find>Data too long fo</find>
-      <find>Data too long f</find>
-      <find>Data too lo</find>
-      <find>Data too l</find>
-      <find>Data too</find>
-      <find>Data too</find>
-      <find>Data to</find>
-      <find>Data t</find>
-      <find>Data</find>
-      <find>Data</find>
       <find>Dat</find>
-      <find>labam_vivaralu</find>
       <find>application</find>
-      <find>expenditure</find>
       <find>special_loan_btn</find>
+      <find>bill_pay/</find>
+      <find>loa</find>
+      <find>spe</find>
       <find>AccountStatementForm</find>
+      <find>SpecialLoan</find>
+      <find>special_loan.latest('id')</find>
+      <find>fa</find>
+      <find>loan_id</find>
+      <find>labam_vivaralu</find>
+      <find>OrganisationAccount</find>
+      <find>user_search</find>
+      <find>Bi</find>
+      <find>Bil</find>
+      <find>Bills.ob</find>
+      <find>loanid</find>
+      <find>B</find>
+      <find>Bill</find>
+      <find>Bills</find>
+      <find>Bills.</find>
+      <find>Bills.o</find>
+      <find>bill.id</find>
+      <find>name</find>
+      <find>amount</find>
+      <find>tot</find>
+      <find>Date</find>
+      <find>expenditure</find>
+      <find>viv</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,13 +191,14 @@
         <option value="$PROJECT_DIR$/src/people/forms.py" />
         <option value="$PROJECT_DIR$/src/templates/application.html" />
         <option value="$PROJECT_DIR$/src/static/js/general.js" />
-        <option value="$PROJECT_DIR$/src/templates/monthbill.html" />
         <option value="$PROJECT_DIR$/src/jannath/settings.py" />
         <option value="$PROJECT_DIR$/src/people/urls.py" />
-        <option value="$PROJECT_DIR$/src/people/models.py" />
-        <option value="$PROJECT_DIR$/src/templates/statement.html" />
-        <option value="$PROJECT_DIR$/src/people/views.py" />
         <option value="$PROJECT_DIR$/src/templates/useraccount.html" />
+        <option value="$PROJECT_DIR$/src/templates/monthbill.html" />
+        <option value="$PROJECT_DIR$/src/templates/statement.html" />
+        <option value="$PROJECT_DIR$/src/people/models.py" />
+        <option value="$PROJECT_DIR$/src/people/migrations/0011_auto_20191102_1358.py" />
+        <option value="$PROJECT_DIR$/src/people/views.py" />
       </list>
     </option>
   </component>
@@ -283,24 +299,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oraganisation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="organisation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jannath" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -311,7 +309,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="statement.html&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;useraccount.html&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/useraccount.html&#10;vi&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/views.py&#10;bill&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/bill.html&#10;appl&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/application.html&#10;bill.h&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/bill.html&#10;dja&#9;FILE&#9;file:///home/ngudimalla/organisation/src/locale/te/LC_MESSAGES/django.po&#10;ur&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;state&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;form&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;mo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/monthbill.html&#10;for&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;d&#9;FILE&#9;file:///home/ngudimalla/organisation/src/locale/te/LC_MESSAGES/django.po&#10;stat&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;loan.html&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/loan.html&#10;urls&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;fo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;mod&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/models.py&#10;loa&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/loan.html&#10;bas&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/base.html&#10;url&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;base&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/base.html&#10;boo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/static/common-css/bootstrap.css&#10;sett&#9;FILE&#9;file:///home/ngudimalla/organisation/src/jannath/settings.py&#10;re&#9;FILE&#9;file:///home/ngudimalla/organisation/requirements.txt&#10;body&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/body.html&#10;admin&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/admin.py&#10;head&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/header.html&#10;us&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/useraccount.html&#10;app&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/application.html&#10;hea&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/header.html&#10;month&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/monthbill.html&#10;user&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/useraccount.html&#10;bil&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill_paid.html&#10;loan&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/loan.html&#10;usersearch.html&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/usersearch.html&#10;lo&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/login_success.html&#10;logi&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/login.html&#10;mon&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/monthbill.html&#10;pa&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill_paid.html&#10;bill.&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill.html" />
+    <property name="SearchEverywhereHistoryKey" value="dja&#9;FILE&#9;file:///home/ngudimalla/organisation/src/locale/te/LC_MESSAGES/django.po&#10;st&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;useraccount.html&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/useraccount.html&#10;settin&#9;FILE&#9;file:///home/ngudimalla/organisation/src/jannath/settings.py&#10;statement.html&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;vi&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/views.py&#10;bill&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/bill.html&#10;appl&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/application.html&#10;bill.h&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/bill.html&#10;ur&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;state&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;form&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;mo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/monthbill.html&#10;for&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;d&#9;FILE&#9;file:///home/ngudimalla/organisation/src/locale/te/LC_MESSAGES/django.po&#10;stat&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/statement.html&#10;loan.html&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/loan.html&#10;urls&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;fo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/forms.py&#10;mod&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/models.py&#10;loa&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/loan.html&#10;bas&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/base.html&#10;url&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/urls.py&#10;base&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/base.html&#10;boo&#9;FILE&#9;file:///home/ngudimalla/organisation/src/static/common-css/bootstrap.css&#10;sett&#9;FILE&#9;file:///home/ngudimalla/organisation/src/jannath/settings.py&#10;re&#9;FILE&#9;file:///home/ngudimalla/organisation/requirements.txt&#10;body&#9;FILE&#9;file:///home/ngudimalla/organisation/src/templates/body.html&#10;admin&#9;FILE&#9;file:///home/ngudimalla/organisation/src/people/admin.py&#10;head&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/header.html&#10;us&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/useraccount.html&#10;app&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/application.html&#10;hea&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/header.html&#10;month&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/monthbill.html&#10;user&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/useraccount.html&#10;bil&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill_paid.html&#10;loan&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/loan.html&#10;usersearch.html&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/usersearch.html&#10;lo&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/login_success.html&#10;logi&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/login.html&#10;mon&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/monthbill.html&#10;pa&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill_paid.html&#10;bill.&#9;FILE&#9;file:///home/ngudimalla/oraganisation/src/templates/bill.html" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -525,7 +523,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45665634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22910216" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37461302" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -574,28 +572,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/people/views.py</url>
-          <line>205</line>
+          <line>214</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/people/views.py</url>
-          <line>202</line>
+          <line>211</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/people/views.py</url>
-          <line>192</line>
+          <line>201</line>
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/people/views.py</url>
-          <line>104</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/people/views.py</url>
-          <line>97</line>
-          <option name="timeStamp" value="18" />
+          <line>474</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -605,7 +598,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="25" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -862,14 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/locale/te/LC_MESSAGES/django.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="46" column="38" lean-forward="false" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3438">
@@ -903,22 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/monthbill.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jannath/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jannath/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -926,14 +895,6 @@
           <folding>
             <element signature="e#560#601#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/org_proj/local/lib/python2.7/site-packages/django/views/generic/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,60 +906,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/people/urls.py">
+    <entry file="file://$PROJECT_DIR$/src/jannath/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="36" />
-          <folding>
-            <element signature="e#2#166#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/people/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        <state relative-caret-position="102">
+          <caret line="115" column="24" lean-forward="true" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/people/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="122" column="6" lean-forward="false" selection-start-line="122" selection-start-column="6" selection-end-line="122" selection-end-column="6" />
-          <folding>
-            <element signature="e#25#76#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="156">
+          <caret line="143" column="6" lean-forward="false" selection-start-line="143" selection-start-column="6" selection-end-line="143" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/monthbill.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="123" column="8" lean-forward="true" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/statement.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
+        <state relative-caret-position="78">
+          <caret line="50" column="47" lean-forward="false" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/people/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="19" column="67" lean-forward="false" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+          <folding>
+            <element signature="e#2#166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/people/migrations/0011_auto_20191102_1358.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/useraccount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/org_proj/local/lib/python2.7/site-packages/django/core/handlers/exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/people/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="39" column="6" lean-forward="false" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/org_proj/local/lib/python2.7/site-packages/django/views/generic/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locale/te/LC_MESSAGES/django.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="130" column="15" lean-forward="false" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/people/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="478" column="0" lean-forward="true" selection-start-line="478" selection-start-column="0" selection-end-line="478" selection-end-column="0" />
+        <state relative-caret-position="227">
+          <caret line="462" column="34" lean-forward="true" selection-start-line="462" selection-start-column="34" selection-end-line="462" selection-end-column="34" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/useraccount.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="85" column="64" lean-forward="false" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="64" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

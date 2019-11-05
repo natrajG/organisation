@@ -47,9 +47,10 @@ class SpecialLoan(models.Model):
 
 
 class Bills(models.Model):
+    appid = models.ForeignKey(Application, related_name='appbill')
     loanid = models.IntegerField(default=0)
     created_at = models.DateField(default=None)
-    total = models.CharField(max_length=20)
+    total = models.CharField(max_length=100)
     paid_emi = models.IntegerField(default=0)
     emi_no = models.IntegerField(default=0)
     rm_amount = models.IntegerField(default=0)

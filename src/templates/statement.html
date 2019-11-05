@@ -30,43 +30,44 @@
 
 <script>
     $(document).ready(function() {
-        $("#expenditure_btn").click(function() {
+        $("#expenditure_btn").click(function(e) {
             $("#expenditure").show();
             $("#account_statement").hide();
             $("#totalprofit").hide();
-        });
-
-        $("#account_statement_btn").click(function() {
-            $("#expenditure").hide();
-            $("#account_statement").show();
-            $("#totalprofit").hide();
-        });
-
-        $("#total_profit_btn").click(function() {
-            $("#expenditure").hide();
-            $("#account_statement").hide();
-            $("#totalprofit").show();
-        });
-
-        $("#totalprofit").submit(function(e) {
-            $( '#totalprofit' ).each(function(){
-                this.reset();
-            });
-            <!--$("#totalprofit").hide();-->
-        });
-
-        $("#account_statement").submit(function(e) {
-            $( '#account_statement' ).each(function(){
-                this.reset();
-            });
-            <!--$("#account_statement").hide();-->
-        });
-
-        $("#expenditure").submit(function(e) {
             $( '#expenditure' ).each(function(){
                 this.reset();
             });
-            <!--$("#expenditure").hide();-->
+        });
+
+        $("#account_statement_btn").click(function(e) {
+            $("#expenditure").hide();
+            $("#account_statement").show();
+            $("#totalprofit").hide();
+            $( '#totalprofit' ).each(function(){
+                this.reset();
+            });
+        });
+
+        $("#total_profit_btn").click(function(e) {
+            $("#expenditure").hide();
+            $("#account_statement").hide();
+            $("#totalprofit").show();
+            $( '#totalprofit' ).each(function(){
+                this.reset();
+            });
+        });
+
+        $("#totalprofit").submit(function(e) {
+
+            $("#totalprofit").hide();
+        });
+
+        $("#account_statement").submit(function(e) {
+            $("#account_statement").hide();
+        });
+
+        $("#expenditure").submit(function(e) {
+            $("#expenditure").hide();
         });
         var validateUsername = function(e) {
         var a = [];

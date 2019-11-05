@@ -73,10 +73,18 @@ class UserSearchResultView(TemplateView,
             app1 = Application.objects.get(full_name=kwargs['appid'])
         useraccount = SavingAccount.objects.filter(appid_id=app1.id).latest('id')
         try:
-            loan = Loan.objects.filter(appid_id=app1.id).latest('id')
-            context['loan_status'] = loan.status
-            special_loan = SpecialLoan.objects.filter(appid_id=app1.id).latest('id')
-            context['special_loan_status'] = special_loan.status
+            loan = Loan.objects.filter(appid_id=app1.id)
+            if loan and loan.latest('id').status:
+                context['loan_amount'] = loan.latest('id').loan_amount
+                context['loan_status'] = loan.latest('id').status
+            else:
+                context['loan_amount'] = 0.0
+            special_loan = SpecialLoan.objects.filter(appid_id=app1.id)
+            if special_loan and special_loan.latest('id').status:
+                context['sp_loan_amount'] = special_loan.latest('id').special_loan_amount
+                context['special_loan_status'] = special_loan.latest('id').status
+            else:
+                context['sp_loan_amount'] = 0.0
 
         except:
             pass
@@ -153,17 +161,18 @@ class UserSearchResultView(TemplateView,
                                special_loan.status)
                         writer.writerow(var)
                 else:
+                    writer.writerow([_('bill no'), _('bill date'), _('sharemoney'), _('emi amount'),
+                                     _('intrest_mon'), _('specialloan'), _('special_money'),
+                                     _('fine'), _('remaining debt'), _('full pay'), _('Total')])
                     try:
-                        loan_details = Loan.objects.filter(appid_id=self.kwargs['appid'])
-                        for loan in loan_details:
-                            bills = Bills.objects.filter(loanid=loan.id,
-                                                         created_at__lte=to_date,
-                                                         created_at__gte=request.POST.get('from_date'))
-                            for bill in bills:
-                                var = (bill.id, bill.created_at, bill.share_amount, loan.loan_amount, bill.paid_emi, bill.interest_amount,
-                                       bill.special_loan_amount, bill.special_intrest, bill.penality,
-                                       bill.rm_amount, bill.full_paid, bill.total)
-                                writer.writerow(var)
+                        bills = Bills.objects.filter(appid=self.kwargs['appid'],
+                                                     created_at__lte=to_date,
+                                                     created_at__gte=request.POST.get('from_date'))
+                        for bill in bills:
+                            var = (bill.id, bill.created_at, bill.share_amount, bill.paid_emi, bill.interest_amount,
+                                   bill.special_loan_amount, bill.special_intrest, bill.penality,
+                                   bill.rm_amount, bill.full_paid, bill.total)
+                            writer.writerow(var)
                     except Exception as e:
                         print e
                 return response
@@ -263,19 +272,32 @@ class BillPayView(TemplateView):
         try:
             if context['app_id'].isdigit():
                 loan = Loan.objects.filter(appid_id=context['app_id']).latest('id')
+                special_loan = SpecialLoan.objects.filter(appid_id=context['app_id'])
             else:
                 app1 = Application.objects.get(full_name=context['app_id'])
                 loan = Loan.objects.filter(appid_id=app1.id).latest('id')
+                special_loan = SpecialLoan.objects.filter(appid_id=app1.id)
+
         except Loan.DoesNotExist:
             if context['app_id'].isdigit():
                 context['name'] = Application.objects.get(id=context['app_id'])
             else:
                 context['name'] = Application.objects.get(full_name=context['app_id'])
-            context['share_amount'] = 200
+            if self.request.POST.get('share_amount'):
+                context['share_amount'] = float(self.request.POST.get('share_amount'))
+            else:
+                context['share_amount'] = 200
             context['date'] = datetime.now().date()
             # context['total'] = context['share_amount']
             context['loan_id'] = None
+            context['sp_loan_id'] = None
             return context
+        if special_loan and special_loan.latest('id').status:
+            context['special_loan_amount'] = special_loan.latest('id').special_loan_amount
+            context['special_intrest'] = special_loan.latest('id').special_intrest_amount
+            context['sp_loan_id'] = special_loan.latest('id').id
+        else:
+            context['sp_loan_id'] = None
         if loan and loan.status:
             try:
                 bill = Bills.objects.filter(loanid=loan.id).latest('id')
@@ -301,7 +323,10 @@ class BillPayView(TemplateView):
             context['emi_amount'] = loan.emi_amount
             context['loan_amount'] = loan.loan_amount
             context['rate'] = 1
-            context['share_amount'] = 200
+            if self.request.POST.get('share_amount'):
+                context['share_amount'] = float(self.request.POST.get('share_amount'))
+            else:
+                context['share_amount'] = 200
             context['name'] = Application.objects.get(id=loan.appid_id)
             context['date'] = datetime.now().date()
             context['loan_id'] = loan.id
@@ -310,7 +335,10 @@ class BillPayView(TemplateView):
                 context['name'] = Application.objects.get(id=context['app_id'])
             else:
                 context['name'] = Application.objects.get(full_name=context['app_id'])
-            context['share_amount'] = 200
+            if self.request.POST.get('share_amount'):
+                context['share_amount'] = float(self.request.POST.get('share_amount'))
+            else:
+                context['share_amount'] = 200
             context['date'] = datetime.now().date()
             # context['total'] = context['share_amount']
             context['loan_id'] = None
@@ -321,8 +349,14 @@ class BillPayView(TemplateView):
         special_loan_amount = request.POST.get('special_loan_amount')
         special_intrest = request.POST.get('special_intrest')
         penality = request.POST.get('penality')
+        if not result['app_id'].isdigit():
+            result['app_id'] = Application.objects.get(full_name=result['app_id']).id
         full_paid = request.POST.get('full_paid')
         total_amount = request.POST.get('total_amount')
+        if result['sp_loan_id'] is not  None:
+            sp_loan = SpecialLoan.objects.get(id=result['sp_loan_id'])
+            sp_loan.status = False
+            sp_loan.save()
         if result['loan_id'] is not None:
             if result['remaining_debt'] == 0:
                 loan = Loan.objects.get(id=result['loan_id'])
@@ -333,13 +367,14 @@ class BillPayView(TemplateView):
                                         rm_amount=result['remaining_debt'],
                                         interest_amount=result['intrest'],
                                         loanid=result['loan_id'],
-                                        special_loan_amount= special_loan_amount if special_loan_amount else 0,
+                                        appid_id=result['app_id'],
+                                        special_loan_amount=special_loan_amount if special_loan_amount else 0,
                                         special_intrest=special_intrest if special_intrest else 0,
                                         penality=penality if penality else 0,
                                         full_paid=full_paid if full_paid else 0,
                                         share_amount=result['share_amount'])
         else:
-            bill = Bills.objects.create(share_amount=result['share_amount'],created_at=result['date'], total=total_amount)
+            bill = Bills.objects.create(appid_id=result['app_id'], share_amount=result['share_amount'],created_at=result['date'], total=total_amount)
         if result['app_id'].isdigit():
             saving_account = SavingAccount.objects.get(appid_id=result['app_id'])
         else:
@@ -423,12 +458,11 @@ class GenerateStatementView(TemplateView,
                            special_loan.status)
                     writer.writerow(var)
             elif statement_type == 'karchulu':
-                writer.writerow([_('name'), _('amount'),
-                                 _('Date')])
+                writer.writerow([_('Date'), _('karchulu'), _('Total')])
                 exp_amount = ExpenditureModel.objects.filter(created_at__lte=request.POST.get('to_date'),
                                                              created_at__gte=request.POST.get('from_date'))
                 for exp in exp_amount:
-                    var = (exp.created_at, exp.name, exp.amount)
+                    var = (exp.created_at,exp.name,exp.amount)
                     writer.writerow(var)
             elif statement_type == 'labam_vivaralu':
                 writer.writerow([_('intrest_mon'), _('special_money'),
@@ -454,13 +488,18 @@ class GenerateStatementView(TemplateView,
                                                          amount=request.POST.get('amount'),
                                                          created_at=request.POST.get('date'))
             exp_amount.save()
+            org_acc = OrganisationAccount.objects.latest('id')
+            org_acc.balance = org_acc.balance - float(exp_amount.amount)
+            org_acc.save()
         elif request.POST.get('total_profit_amount'):
             profit = request.POST.get('total_profit_amount')
             save_acc = SavingAccount.objects.all()
             for acc in save_acc:
                 acc.balance += float(profit)
                 acc.save()
-
+            org_acc = OrganisationAccount.objects.latest('id')
+            org_acc.balance = org_acc.balance - float(profit)
+            org_acc.save()
         return response
 
 

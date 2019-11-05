@@ -85,7 +85,7 @@
     <tr>
         <td>{% trans 'Share Amount' %} </td>
         <td>
-            <input class="editable" value="{{share_amount}}" id="id_share_amount" readonly>
+            <input class="editable" name="share_amount" value="{{share_amount}}" id="id_share_amount" readonly>
         </td>
     </tr>
     <tr>
@@ -116,15 +116,15 @@
         </td>
     </tr>
     <tr>
-        <td>{% trans 'Special Loan Amount' %}  (       )</td>
+        <td>{% trans 'Special Loan Amount' %}  ({{special_loan_amount}})</td>
         <td>
-            <input name="special_loan_amount" readonly>
+            <input class="summate" name="special_loan_amount" value="{{special_loan_amount}}" readonly>
         </td>
     </tr>
     <tr>
         <td>{% trans 'Special Intrest Amount' %} </td>
         <td>
-            <input name="special_intrest" readonly>
+            <input class="summate" name="special_intrest" value="{{special_intrest}}" readonly>
         </td>
     </tr>
     <tr>
