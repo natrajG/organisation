@@ -2,7 +2,7 @@ django-bootstrap-datepicker==1.2.3
 django-google-tag-manager==0.0.3
 django-multi-form-view==2.0.0
 django-translation-manager==0.5.1
-Django==1.11.2
+Django==2.2.24
 PyJWT==1.6.1
 argparse==1.2.1
 certifi==2018.1.18
