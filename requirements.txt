@@ -5,7 +5,7 @@ django-translation-manager==0.5.1
 Django==1.11.2
 PyJWT==1.6.1
 argparse==1.2.1
-certifi==2018.1.18
+certifi==2022.12.7
 chardet==3.0.4
 django-bootstrap-datepicker==1.2.3
 django-google-tag-manager==0.0.3
